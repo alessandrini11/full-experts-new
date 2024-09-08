@@ -1,0 +1,97 @@
+{% include 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr>
+    <div class="container" style="background-color:white">
+      <h1 class="h2">KYC</h1>
+      <p>{{ username }}, Welcome to <b>Know Your Client</b> page!</p>
+      <h3>Veuillez remplir le formulaire suivant </h3>
+                {%  with messages = get_flashed_messages() %}
+                  {% if messages %}
+                      {% for msg in messages %}
+                              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <p>{{ msg }}</p>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              </div>
+                      {% endfor %}
+                  {% endif %}
+                {% endwith %}
+        <form class="row g-3" action="{{url_for('success')}}" method="POST" enctype="multipart/form-data">
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" title="Votre adresse email" placeholder="e.g ngaliabiru@gmail.com" name="address_mail" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Votre numéro de telephone</label>
+            <input class="form-control" id="inputPassword4" type="text" title="Votre numéro de telephone" placeholder="e.g 653846229" name="telephone" required>
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Votre nom complet</label>
+            <input type="text" title="Votre nom complet" placeholder="eg. Ngali Abiru" name="nom" class="form-control" id="inputAddress" required>
+          </div>
+          <div class="col-12">
+            <label for="inputAddress2" class="form-label">Votre Pays</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="e.g Cameroon" title="Votre Pays" name="pays" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">City</label>
+            <input type="text" class="form-control" id="inputCity" title="Votre Ville" placeholder="veuillez saisir votre Ville" name="ville" required>
+          </div>
+          <div class="col-md-4">
+            <label for="inputState" class="form-label">Secteurs</label>
+            <select id="inputState" class="form-select" name="secteurs" required>
+              <option selected>Choisissez un secteur...</option>
+              <option value="Finance">Finance</option>
+              <option value="ONG">ONG</option>
+              <option value="Sante">SANTE</option>
+              <option value="sport">SPORT</option>
+              <option value="loisir">LOISIR</option>
+              <option value="art">ART</option>
+              <option value="restauration">RESTAURATION</option>
+              <option value="immobilier">IMMOBILIER</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <label for="inputZip" class="form-label">Vous n'avez pas vu votre secteur</label>
+            <input type="text" class="form-control" id="inputZip" name="no_sector" placeholder="écrivez votre secteur ici" >
+          </div>
+
+          <div class="input-group mb-3" id="basic-url" >
+            <label for="basic-url" class="form-label">Avez-vous déjà une société?</label>
+            <input type="text" id="yes" name="yes" class="form-control" placeholder="OUI: Décrivez votre société ici en quelques mots" aria-label="Username">
+            <span class="input-group-text">@</span>
+            <input type="text" id="no" name="no" class="form-control" placeholder="NON: Décrivez votre future société ici en quelques mots" aria-label="Server">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-text">What do you want from us?</span>
+            <textarea class="form-control" aria-label="With textarea" id="problem" name="problem" placeholder="Describe your objectives in few words"></textarea>
+          </div>
+
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+
+    </div>
+
+
+
+{% endblock %}
+<!--<script src="{{ url_for('static', filename='kyc.js') }}"></script>-->

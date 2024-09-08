@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+
+<div class="container cards">
+    <p class="container">
+        {% for use in user %}
+
+        <div class="card text-white bg-primary mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">user full name: {{use.fullname}}</div>
+          <div class="card-body">
+            <h5 class="card-title">username: {{use.username}}</h5>
+            <p class="card-text">
+                user id: {{use.id}}<br>
+                user email: {{use.email}}<br>
+                user passord:{{use.key_id}}<br>
+                registered on: {{use.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+    </p>
+</div>
+
+</body>
+</html>

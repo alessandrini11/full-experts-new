@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="FULL EXPERTS CONSULTING, votre partenaire de confiance pour prendre des décisions
+          d'affaires éclairées. Grâce à notre vaste expertise en matière d'analyse de données. Douala, Bounamousadi">
+  <meta name="keywords" content="Full experts consulting, douala, cameroon">
+  <meta name="author" content="By Ngali Abiru, AI and software Engineer from polytechnic">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style_main.css') }}">
+  <title>full experts consulting developed by Ngali Abiru</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1>
+              <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" alt="LOGO">
+            </h1>
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="{{url_for('pub_page')}}" data-after="Contact">Enterprises</a></li>
+            <li><a href="#services" data-after="Service">Services</a></li>
+<!--            <li><a href="#projects" data-after="Problems">Problems</a></li>-->
+            <li><a href="#about" data-after="About">About</a></li>
+            <li><a href="#contact" data-after="Contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+<div class="Section_top" id="hero">
+
+        <div class="content">
+          <div class="animated-text">
+            Bienvenue <br> <span style="font-size: 3vw"></span>
+        </div>
+<!--          <h1><a href="{{ url_for('register') }}" type="button" class="cta" style=" font-size: 3vw">faites la publicite de votre entreprise</span></a></h1>-->
+<!--            <h1 style=" font-size: 20px;">FULL EXPERTS <span>CONSULTING</span></h1>-->
+          <br>
+          <br>
+          <br>
+<!--            <a href="{{ url_for('login') }}">LOGIN</a>-->
+            <a href="{{ url_for('pub_page') }}">les Entreprises</a>
+          <br>
+          <br>
+          <br>
+<!--              <h2 id="pg" class="ct">Bienvenue à FULL EXPERTS CONSULTING, avez vous une societe qui a besion de la publicite? </h2>-->
+<!--    <a href="{{ url_for('register') }}" type="button" class="cta" style=" font-size: 3vw">faites la publicite de votre entreprise</a>-->
+          <br>
+          <br>
+          <p style="color:white; font-size: 2vw">DES ENTREPRISES QUE VOUS CONNAISSEZ PEUT-ÊTRE</p>
+                <div class="scroller" data-speed="fast">
+<!--                <h2 class="ct">Enterprises you may Know</h2>-->
+                  <div class="scroller" data-speed="fast">
+                  <ul class="tag-list scroller__inner">
+                    <li><a href="http://www.e-santecameroun.cm" class="cttt" target="_blank">e-sante</a></li>
+                    <li> <a href="#" class="cttt">full Experts</a></li>
+                    <li><a href="https://www.ubacameroon.com" class="cttt" target="_blank">UBA</a></li>
+                    <li><a href="http://eneocameroon.cm/" class="cttt" target="_blank">ENEO</a></li>
+                    <li><a href="https://www.mtn.cm/" class="cttt" target="_blank">MTN Cameroon</a></li>
+                    <li> <a href="https://www.orange.cm" class="cttt" target="_blank">ORANGE Cameroon</a></li>
+                  </ul>
+                </div>
+                </div>
+        </div>
+
+
+</div>
+  <!-- Hero Section  -->
+
+
+
+
+
+
+
+
+<!--  <section id="hero">-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <a href="#" type="button" class="ctt">-->
+<!--      &nbsp &nbsp &nbsp  &nbsp &nbsp Bienvenue à FULL EXPERTS CONSULTING,-->
+<!--      <br>-->
+<!--      Avez-vous une societe qui a besoin de la publicite?-->
+<!--    </a>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--&lt;!&ndash;    <h2 id="pg" class="ct">Bienvenue à FULL EXPERTS CONSULTING, avez vous une societe qui a besion de la publicite? </h2>&ndash;&gt;-->
+<!--    <a href="{{ url_for('register') }}" type="button" class="cta">faites la publicite de votre entreprise</a>-->
+<!--    <div class="mx">-->
+<!--      <br>-->
+<!--      <br>-->
+<!--      <br>-->
+<!--      <br>-->
+<!--      <br>-->
+<!--                <div class="scroller" data-speed="fast">-->
+<!--&lt;!&ndash;                <h2 class="ct">Enterprises you may Know</h2>&ndash;&gt;-->
+<!--                  <div class="scroller" data-speed="fast">-->
+<!--                  <ul class="tag-list scroller__inner">-->
+<!--                    <li><a href="http://www.e-santecameroun.cm" class="cttt" target="_blank">e-sante</a></li>-->
+<!--                    <li> <a href="#" class="cttt">full Experts</a></li>-->
+<!--                    <li><a href="https://www.ubacameroon.com" class="cttt" target="_blank">UBA</a></li>-->
+<!--                    <li><a href="http://eneocameroon.cm/" class="cttt" target="_blank">ENEO</a></li>-->
+<!--                    <li><a href="https://www.mtn.cm/" class="cttt" target="_blank">MTN Cameroon</a></li>-->
+<!--                    <li> <a href="https://www.orange.cm" class="cttt" target="_blank">ORANGE Cameroon</a></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                  <p></p>-->
+<!--                  <br>-->
+<!--&lt;!&ndash;                  <img class="img-fluid" style="height:170px;" src="https://www.clicdata.com/wp-content/uploads/2023/04/home-data-management-icon.jpg" alt="">&ndash;&gt;-->
+<!--                </div>-->
+
+<!--    </div>-->
+
+<!--  </section>-->
+
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+
+
+  <section id="services">
+    <div class="services container">
+      <div class="service-top" >
+        <h1 class="section-title reveal" style="font-size: 6vw;color:#000080">Serv<span>i</span>ces</h1>
+        <br>
+        <br>
+
+        <div class="card mb-3 mx-auto reveal" style="max-width: 840px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://www.valdesomme.com/wp-content/uploads/2023/02/Le-saviez-vous-.png" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title" style="color:#000080; font-size:20px;">Développer votre activité</h5>
+                <p class="card-text">
+                  Au Cameroun comme ailleurs de multiples projets d’investissement ne traversent pas le stade de l’idée. La non maîtrise de l’environnement alimentée principalement par un déficit de statistique, constitue l’une des causes importantes de la mortalité prématurée des projets d’entreprises.
+                  Au-delà de simples débats conceptuels, la réussite ne saurait se construire sans la maîtrise des facteurs d’échec au travers d’habiles cartographies de risques à prendre en compte pour chaque investissement.
+                  <br>
+                  Ainsi FULL EXPERTS CONSULTING se positionne dans un accompagnement pluriel :
+                  <li style="font-size:15px; text-align: left;">La gestation d’idées</li>
+                  <li style="font-size:15px; text-align: left;">L’optimisation par l’excellence opérationnelle</li>
+                  <li style="font-size:15px; text-align: left;">Le développement</li>
+                  <br>
+                  <p>
+                                  Ce positionnement place la collecte et l’analyse de données comme facteur clé de réussite : les statistiques avant, pendant et après votre projet.
+                  </p>
+                  <br>
+                  <p>
+                    Ainsi vous nous intéressez si vous faite partie de l’une des catégories ci-dessous :
+                    <br>
+                    <li style="font-size:15px; text-align: left;">Vous avez de l’argent et vous recherchez une idée d’investissement.</li>
+                    <li style="font-size:15px; text-align: left;">Vous avez une idée d’investissement mais pas d’argent.</li>
+                    <li style="font-size:15px; text-align: left;">Vous avez des idées et de l’argent mais vous n’arrivez pas à franchir l’étape du déclic pour vous lancer.</li>
+                    <li style="font-size:15px; text-align: left;">Vous avez réalisé votre projet d’investissement mais avec de très peu de résultats</li>
+                    <li style="font-size:15px; text-align: left;">Vous avez réalisé votre idée de projet avec un certain succès, mais vous souhaitez développer votre activité.</li>
+                  </p>
+
+                </p>
+<!--                <p class="card-text"><small class="text-muted">With us, your business is safe</small></p>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="mx-auto reveal">
+          <h1 style="font-weight:900; color:red" >Nous vous présentons nos différents services</h1>
+        <h3>Cliquez sur l'un de ces boutons si vous êtes intéressé par le service</h3>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item reveal">
+          <div class="icon"><img src="https://www.arti-gest.fr/wp-content/uploads/2017/09/Fotolia_119211768_S.jpg" /></div>
+          <h2>SERVICE 1</h2>
+
+
+            <p class="card-text">
+
+                     <a class="btn btn-primary  btn-lg" data-bs-toggle="collapse" href="#collapseExample11" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h1>Etude et montage de projet</h1>
+                    </a>
+                       <div>
+                          <li style="text-align: left; font-size:15px; color:white">Boîte à idées</li>
+                          <li style="text-align: left; font-size:15px; color:white">Elaboration de business plan</li>
+                        </div>
+
+                    <div class="collapse" id="collapseExample11">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3 style="color: black">Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('montageProjet')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+
+            </p>
+
+
+        </div>
+        <div class="service-item reveal">
+          <div class="icon"><img src="https://www.ecsinformatique.com/wp-content/uploads/2020/03/Etude-de-march%C3%A9.jpg" /></div>
+          <h2>Service 2</h2>
+
+          <p>
+            <p class="card-text">
+                     <a class="btn btn-success  btn-lg" data-bs-toggle="collapse" href="#collapseExample12" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h1>Analyse et étude de marché</h1>
+                    </a>
+
+                    <div>
+                          <li style="text-align: left; font-size:15px; color:white">Collecte de données</li>
+                          <li style="text-align: left; font-size:15px; color:white">Analyse de données</li>
+                        </div>
+
+                    <div class="collapse" id="collapseExample12">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3 style="color: black">Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('etudeMarche')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+            </p>
+          </p>
+
+
+        </div>
+        <div class="service-item reveal">
+          <div class="icon"><img src="https://cdn.savoir.fr/wp-content/uploads/sites/13/2011/11/Marketing-strat%C3%A9gique.jpg" /></div>
+          <h2>Service 3</h2>
+          <p>
+                       <p class="card-text">
+                     <a class="btn btn-danger  btn-lg" data-bs-toggle="collapse" href="#collapseExample13" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h1>Marketing stratégique</h1>
+                    </a>
+
+                      <div>
+                          <li style="text-align: left; font-size:15px; color:white">Elaboration de stratégie marketing</li>
+                          <li style="text-align: left; font-size:15px ; color:white">Mise en place de force de vente</li>
+                          <li style="text-align: left; font-size:15px ; color:white">Optimisation de force de vente</li>
+                        </div>
+
+                    <div class="collapse" id="collapseExample13">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3 style="color: black">Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('marketing')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+            </p>
+
+          </p>
+
+        </div>
+        <div class="service-item reveal">
+          <div class="icon"><img src="https://asa-formation.com/wp-content/uploads/2022/04/formation4.jpg" /></div>
+          <h2>Service 4</h2>
+          <p>
+
+            <p class="card-text">
+                     <a class="btn btn-warning  btn-lg" data-bs-toggle="collapse" href="#collapseExample14" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h1>Formation</h1>
+                    </a>
+                       <div>
+                          <li style="text-align: left; font-size:15px; color: white">Formation de personnel</li>
+                          <li style="text-align: left; font-size:15px; ; color: white">Optimisation des outils offices</li>
+                        </div>
+
+                    <div class="collapse" id="collapseExample14">
+                      <div class="card card-body">
+
+                        <br>Please fill the form if you are concernedPlease fill the form if interested</h3>
+
+                        <form action="{{url_for('formation')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-warning">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+            </p>
+
+          </p>
+
+        </div>
+
+
+                <div class="service-item reveal">
+          <div class="icon"><img src="https://www-actus.univ-ubs.fr/_shared-resource/all/Visuels%20-%201680x588/doctorat_1680x588_max140x400.jpg" /></div>
+          <h2>Service 5</h2>
+          <p>
+
+            <p class="card-text">
+                     <a class="btn btn-dark  btn-lg" data-bs-toggle="collapse" href="#collapseExample15" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h1>Accompagnement Doctoral</h1>
+                    </a>
+
+                      <div>
+                          <li style="text-align: left; font-size:15px; color:white">Collecte de données relative aux thèses doctorales</li>
+                          <li style="text-align: left; font-size:15px; color: white">Analyse de données collectées</li>
+                        </div>
+
+                    <div class="collapse" id="collapseExample15">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3 style="color: black">Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('doctoral')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-dark">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+            </p>
+
+          </p>
+
+        </div>
+
+
+                <div class="service-item reveal">
+          <div class="icon"><img src="https://www.feedough.com/wp-content/uploads/2021/02/publicity.png" /></div>
+          <h2>Service 6</h2>
+          <p>
+
+            <p class="card-text">
+                     <a class="btn btn-info  btn-lg" data-bs-toggle="collapse" href="#collapseExample16" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <h1>Publicités</h1>
+                    </a>
+                    <div class="collapse" id="collapseExample16">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3 style="color: black">Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('risk')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+            </p>
+
+          </p>
+
+        </div>
+
+
+      </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="card mb-3 mx-auto reveal" style="max-width: 840px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-cartoon-cartoon-business-business-man-business-man-png-image_476177.jpg" class="card-img-top img-fluid" alt="photo">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h1 class="card-title">Qui êtes vous?</h1>
+                  <h3>Cliquez sur l'un de ces boutons si vous êtes concerné(e)</h3>
+
+                  <p class="card-text">
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    vous recherchez une idée d’investissement
+                    </a>
+                    <div class="collapse" id="collapseExample1">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3>Please fill the form if you are concerned</h3>
+                        <form action="{{url_for('chercherIdee')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Telephone Number" name="telephone" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                  </p>
+                  <br>
+                  <p class="card-text">
+                    <a class="btn btn-info" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Vous avez une idée d’investissement
+                    </a>
+                    <div class="collapse" id="collapseExample2">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3>Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('avezIdee')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Your Email" name="email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Telephone Number" name="telephone" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-info">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+                  </p>
+                  <br>
+
+                  <p class="card-text">
+                        <a class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Vous avez des idées et de l’argent mais vous n’arrivez pas à franchir l’étape du déclic pour vous lancer
+
+                    </a>
+                    <div class="collapse" id="collapseExample3">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3>Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('ideeArgent')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                          </div>
+                        </form>
+
+
+                      </div>
+                    </div>
+
+
+                  </p>
+                  <br>
+
+                  <p class="card-text">
+
+                     <a class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Vous avez réalisé votre projet d’investissement mais avec de très peu de résultats
+
+                    </a>
+                    <div class="collapse" id="collapseExample4">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3>Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('realiserProjet')}}" method="POST" class="row g-3" required>
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+
+
+
+                  </p>
+                  <br>
+
+                  <p class="card-text">
+
+                     <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample5" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Vous avez réalisé votre idée de projet avec un certain succès, mais vous souhaitez développer votre activité
+
+                    </a>
+                    <div class="collapse" id="collapseExample5">
+                      <div class="card card-body">
+
+                        <br>
+                        <h3>Please fill the form if you are concerned</h3>
+
+                        <form action="{{url_for('realiserIdee')}}" method="POST" class="row g-3">
+                          <div class="col-md-6">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Your Name" name="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <input type="text" class="form-control" name="telephone" placeholder="Telephone Number" required>
+                          </div>
+                          <div class="col-md-6">
+                            <button type="submit" class="btn btn-secondary">Submit</button>
+                          </div>
+                        </form>
+
+                      </div>
+                    </div>
+
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+      <br>
+      <br>
+
+
+
+
+
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+
+
+
+  <!-- Projects Section -->
+<!--  <section id="projects">-->
+<!--    <div class="projects container">-->
+<!--      <div class="projects-header reveal">-->
+<!--        <h1 class="section-title" style="font-size: 4vw;">Recent <span>Problems</span> faced by entreprises</h1>-->
+<!--      </div>-->
+<!--      <div class="all-projects reveal">-->
+<!--        <div class="project-item">-->
+<!--          <div class="project-info">-->
+<!--            <h1>Problème 1</h1>-->
+<!--            <h2>problèmes économiques</h2>-->
+<!--            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde-->
+<!--              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt-->
+<!--              harum? Ipsum repellat animi, fugit architecto voluptatum odit et! Lorem ipsum dolor sit amet consectetur,-->
+<!--              adipisicing elit. Minima facilis culpa, eaque nobis eligendi rerum accusantium repudiandae facere voluptates-->
+<!--               cupiditate provident omnis quas. Recusandae voluptatibus aperiam vitae, quisquam et quia?</p>-->
+<!--          </div>-->
+<!--          <div class="project-img">-->
+<!--            <img src="https://empower-project.eu/wp-content/uploads/2021/05/COVID-19-economic-crisis-and-mental-health-1.jpg" alt="img">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="project-item">-->
+<!--          <div class="project-info">-->
+<!--            <h1>Problem 2</h1>-->
+<!--            <h2>Problèmes sociaux</h2>-->
+<!--            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate voluptatum impedit unde-->
+<!--              rem ipsa distinctio illum quae mollitia ut, accusantium eius odio ducimus illo neque atque libero non sunt-->
+<!--              harum? Ipsum repellat animi, fugit architecto voluptatum odit et! Lorem ipsum dolor sit amet consectetur,-->
+<!--              adipisicing elit. Minima facilis culpa, eaque nobis eligendi rerum accusantium repudiandae facere voluptates-->
+<!--               cupiditate provident omnis quas. Recusandae voluptatibus aperiam vitae, quisquam et quia?</p>-->
+<!--          </div>-->
+<!--          <div class="project-img">-->
+<!--            <img src=" {{ url_for('static', filename='images/problem.PNG') }}" alt="img">-->
+
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+  <!-- End Projects Section -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="about container reveal">
+      <div class="col-left">
+        <div class="about-img">
+          <img class="img-fluid" src=" {{ url_for('static', filename='images/main-logo.PNG') }}" alt="img">
+<!--          <img src="images/main-logo.PNG" alt="img">-->
+        </div>
+      </div>
+      <div class="col-right">
+        <h1 class="section-title" style="font-size: 4vw;">About <span>Full Experts Consulting</span></h1>
+        <h2> <b style="font-size: 4vw; color:red;">Personnels</b></h2>
+        <p style="text-align: left">La société Full Experts Consulting a été créée en 2023 avec une dizaine d'employés.
+          Nous y avons des ingénieurs spécialisés dans l'intelligence artificielle et la science des données
+           capables de fournir des informations exploitables aux entreprises. De plus, nous avons des experts
+           dans divers domaines d'affaires qui sont capables d'apporter des idées d'affaires. <br>
+          <h2><b style="font-size: 4vw; color:red;">Localisation</b></h2>
+          <h3>Nous sommes situés à Douala, Bounamousadi, rond point maetur, en face de KUIFEURU (bâtiment GMC). <br></h3>
+          <h2> <b style="font-size: 4vw; color:red;">Horaire</b></h2>
+          <h3>Nous sommes ouverts du lundi au vendredi de 8h à 17h30</h3>
+        </p>
+        <a href="{{ url_for('register') }}" class="cta">Soyez notre client</a>
+        <a href="{{ url_for('admin') }}" class="cta">l'Espace commerciale</a>
+      </div>
+    </div>
+  </section>
+  <!-- End About Section -->
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container reveal">
+      <div>
+        <h1 class="section-title" style="font-size: 6vw;">Contact <span>info</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+          <div class="contact-info">
+            <h1>Phone</h1>
+            <h2>+237 679611296</h2>
+            <h2>+237 233474200</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          <div class="contact-info">
+            <h1>Email</h1>
+            <h2>chatrian.ebwele@full-experts.com</h2>
+<!--            <h2>ebwele_eugene@yahoo.fr</h2>-->
+            <h2>consulting@full-experts.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+          <div class="contact-info">
+            <h1>Address</h1>
+            <h2>Douala, Bounamousadi, rond point maetur (bâtiment GMC)</h2>
+          </div>
+        </div>
+      </div>
+
+      <div id="contacts">
+        <div class="container">
+          <div class="rows">
+
+            <div class="contact-right">
+              <p> <h1 style="font-size:30px">Send us a message</h1></p>
+              <form action="{{url_for('messages')}}" method="POST">
+                <input type="text" name="n" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="m" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="cta" style="color:black">SUBMIT </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>Full</span>Experts<span>C</span>onsulting</h1>
+      </div>
+      <h2>Your business is safe with us</h2>
+      <div class="social-icon">
+        <div class="social-item">
+          <a href=""><a href="https://www.facebook.com/fullExpertConsulting" target="_blank"><img src="https://img.icons8.com/bubbles/100/000000/facebook-new.png" /></a></a>
+
+        </div>
+        <div class="social-item">
+          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
+        </div>
+<!--        <div class="social-item">-->
+<!--          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/2491px-Logo_of_Twitter.svg.png" /></a>-->
+<!--        </div>-->
+        <div class="social-item">
+          <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/2048px-LinkedIn_icon.svg.png" /></a>
+        </div>
+      </div>
+      <p>Copyright © 2023 full experts consulting. All rights reserved</p>
+      <p> <b><h3 style="color:white">Developed <a href="{{url_for('register_admin')}}">by</a> NGALI ABIRU, AI and software engineer at Full Experts Consulting, from Polytechnic. You can contact the engineer at ngaliabiru@gmail.com</h3></b></p>
+      <p>.</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+
+ <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+  <script>
+    window.addEventListener('scroll', reveal);
+
+    function reveal(){
+      var reveals = document.querySelectorAll('.reveal');
+
+      for(var i = 0; i < reveals.length; i++ ){
+        var windowheight = window.innerHeight;
+        var revealtop = reveals[i].getBoundingClientRect().top;
+        var revealpoint = 150;
+
+        if(revealtop < windowheight - var revealpoint){
+          reveals[i].classList.add('active');
+        }
+        else{
+          reveals[i].classList.remove('active');
+        }
+      }
+
+
+
+    }
+
+
+
+
+  </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  <script>
+
+
+    const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+
+
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
+
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
+
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+});
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-line");
+});
+
+const scrollRevealOption = {
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+};
+
+ScrollReveal().reveal(".container__left h1", {
+  ...scrollRevealOption,
+});
+ScrollReveal().reveal(".container__left .container__btn", {
+  ...scrollRevealOption,
+  delay: 500,
+});
+
+ScrollReveal().reveal(".container__right h4", {
+  ...scrollRevealOption,
+  delay: 2000,
+});
+ScrollReveal().reveal(".container__right h2", {
+  ...scrollRevealOption,
+  delay: 2500,
+});
+ScrollReveal().reveal(".container__right h3", {
+  ...scrollRevealOption,
+  delay: 3000,
+});
+ScrollReveal().reveal(".container__right p", {
+  ...scrollRevealOption,
+  delay: 3500,
+});
+
+ScrollReveal().reveal(".container__right .tent-1", {
+  duration: 1000,
+  delay: 4000,
+});
+ScrollReveal().reveal(".container__right .tent-2", {
+  duration: 1000,
+  delay: 4500,
+});
+
+ScrollReveal().reveal(".location", {
+  ...scrollRevealOption,
+  origin: "left",
+  delay: 5000,
+});
+
+ScrollReveal().reveal(".socials span", {
+  ...scrollRevealOption,
+  origin: "top",
+  delay: 5500,
+  interval: 500,
+});
+
+
+  </script>
+
+
+
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script src=" {{ url_for('static', filename='app.js') }} "></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+</body>
+
+</html>

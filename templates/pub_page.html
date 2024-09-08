@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pub_page.css') }}">
+    <title>Liste of enterprise in cameroon, Liste des entreprise au cameroun.</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">FULL EXPERTS</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="{{url_for('index')}}">HOME</a></li>
+        <li><a href="{{url_for('send_message')}}">Contact US</a></li>
+        <li><a href="{{url_for('search_bar')}}" data-after="Contact">List of Enterprises</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn"><i class="ri-search-line"></i></button>
+        <button class="btn"><i class="ri-shopping-bag-line"></i></button>
+      </div>
+    </nav>
+
+
+        <div>
+        <div class="container d-grid gap-2 d-md-flex justify-content-md-end">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+          <h6>Vous rechercher une entreprise?</h6>
+        <form class=" d-grid gap-2 d-md-flex justify-content-md-end" action="{{url_for('search_enterprise_list')}}" method="POST">
+          <input class="form-control me-2" type="search" placeholder="saisissez le nom" aria-label="Search" name="q1" required>
+          <button class="btn btn-danger" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+          <h6>Recherchez par secteur d'activité</h6>
+        <form class=" d-grid gap-2 d-md-flex justify-content-md-end" action="{{url_for('search_enterprise_list')}}" method="POST">
+          <input class="form-control me-2" type="search" placeholder="Saisissez une rubrique" aria-label="Search" name="q1" required>
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+          <h6>Recherche par quartier</h6>
+        <form class=" d-grid gap-2 d-md-flex justify-content-md-end" action="{{url_for('search_enterprise_list')}}" method="POST">
+          <input class="form-control me-2" type="search" placeholder="Saisissez un Quartier" aria-label="Search" name="q1" required>
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+    </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="container">
+      <div class="container__left">
+
+
+
+        <h1>
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                     <div class="card" style="width: 12rem;">
+                       <a href="https://www.businessfrance.fr/" target="_blank">
+                         <img src="https://gnius.esante.gouv.fr/sites/default/files/2021-06/LOGO_Business-France-fond-blanc.jpg" class="card-img-top" style="height:150px; width:150px" alt="photo">
+                       </a>
+                  </div>
+
+              </div>
+
+              <div class="carousel-item" data-bs-interval="2000">
+                     <div class="card" style="width: 12rem;">
+                       <a href="#" target="_blank">
+                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERcV-R_A_p_HzlE4cafUMNnaYAwRtu27wh716rlruXXcqrW43nU5UMp0BqPRmpexzU7c&usqp=CAU" class="card-img-top" alt="photo">
+                       </a>
+                  </div>
+
+              </div>
+
+              <div class="carousel-item" target="_blank">
+                   <div class="card" style="width: 12rem;">
+                     <a href="#">
+                       <img src="https://world.businessfrance.fr/app/uploads/sites/13/2024/02/bms-consulting-logo.jpg.webp" class="card-img-top" alt="photo">
+                     </a>
+                  </div>
+
+              </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+          </div>
+
+        </h1>
+
+
+
+        <div class="container__btn">
+            <a href="{{url_for('buy_pub_space')}}"><button class="btn">Achetez des espaces publicitaires</button></a>
+        </div>
+      </div>
+      <div class="container__right">
+        <div class="images">
+
+          <div class="tent-1">
+
+                                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                          <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                    <div class="card" style="width: 12rem;">
+                                      <a href="https://www.africanengineeringservices.com">
+                                        <img src="https://www.businesslist.co.cm/img/cm/s/1512039836-52-african-engineering-services-company.jpg" class="card-img-top" alt="photo">
+                                      </a>
+                                    </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                  <div class="card" style="width: 12rem;">
+                                    <a href="https://www.minpmeesa.cm/">
+                                      <img src="https://www.minpmeesa.cm/site/inhoud/uploads/2018/11/logo-1.png" class="card-img-top" alt="photo">
+                                    </a>
+                                </div>
+
+                            </div>
+                          </div>
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                    </div>
+
+          </div>
+
+
+
+          <div class="tent-2">
+
+                        <div id="carouselExampleFade1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                              <div class="card">
+                                <a href="https://brightworld.hr/" target="_blank">
+                                  <img src="https://www.businesslist.co.cm/img/cm/x/1629968412-24-bw-group-ltd.png" class="card-img-top" alt="photo">
+                                </a >
+                              </div>
+                        </div>
+
+                        <div class="carousel-item">
+                               <div class="card">
+                                 <a href="http://canestech.com/" target="_blank">
+                                   <img src="https://www.businesslist.co.cm/img/cm/z/1576726102-17-canestech-inc.png" class="card-img-top" alt="photo">
+                                 </a>
+                               </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+
+          </div>
+
+
+
+
+        </div>
+        <div class="content">
+          <h4>We | the best</h4>
+          <h2>FULL EXPERTS</h2>
+          <h3>la page de la publicité</h3>
+          <p>
+            Ici vous avec acces aux entreprises du cameroun.
+            <a href="{{url_for('enterprise_register_by_admin')}}">Cliquez ici</a> pour inserer la votre.
+          </p>
+        </div>
+      </div>
+      <div class="location">
+          <a href="https://www.google.com/maps/place/full+experts+consulting/@4.089185,9.7402026,16z/data=!4m12!1m5!8m4!1e4!2s101305293122285097947!3m1!1e1!3m5!1s0x10610d000fa5278b:0x792bcf31ab202347!8m2!3d4.089185!4d9.7427775!16s%2Fg%2F11w9hhm2tz?entry=ttu"> <span><i class="ri-map-pin-2-fill"></i></span></a>
+          <a href="https://www.google.com/maps/place/full+experts+consulting/@4.089185,9.7402026,16z/data=!4m12!1m5!8m4!1e4!2s101305293122285097947!3m1!1e1!3m5!1s0x10610d000fa5278b:0x792bcf31ab202347!8m2!3d4.089185!4d9.7427775!16s%2Fg%2F11w9hhm2tz?entry=ttu">OUR LOCATION</a>
+      </div>
+      <div class="socials">
+        <span>
+          <a href="https://www.facebook.com/fullExpertConsulting" target="_blank"><i class="ri-facebook-fill"></i></a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank"><i class="ri-instagram-line"></i></a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank"><i class="ri-linkedin-fill"></i></a>
+        </span>
+      </div>
+    </div>
+
+
+
+       <div class=" container">
+
+           <ul class="list-group shadow bg-white rounded">
+
+               <h3 style="text-align: left; font-size: 3vw">Les entrepise par secteur <b style="color:red">immobilière  <a class="btn btn-success btn-sm"  href="{{url_for('imobilier')}}" role="button">see all</a>
+                </b></h3>   <h4> <a href="{{url_for('client_request_to_add')}}" class="btn btn-primary" style="font-size: 10px">ajouter votre propre entreprise dans ce secteur</a>  </h4>
+
+                               <div class="scroller" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+                    <li>
+
+                        <a href="https://groupesomaf.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://groupesomaf.com/images/partenaires/logo_sic_cameroun.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                        </a>
+
+                    </li>
+
+                    <li> <a href="https://www.pagesjaunes.fr/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://www.pagesjaunes.fr/media/agc/ff/dc/30/00/00/ef/79/62/74/de/648affdc300000ef796274de/648affdc300000ef796274df.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://encrypted-tbn0.gstatic.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwICrU-C3UDsqWtcaocyjTLX0boPJZC-EKDLJJwLuKE_FXV-WwEK6U9kGmLbIA1H1hlIc&usqp=CAU" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://encrypted-tbn0.gstatic.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtvc0E44hbHZ3Dt9h5-ALWcbFsbcnPhB7wQTKB9ShuD2aOIcNYOWnl-TqTeP-4Yq1xJ5Q&usqp=CAU" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://www.pagesjaunes.fr/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://www.pagesjaunes.fr/media/agc/05/a2/31/00/00/53/2a/90/2e/65/645a05a2310000532a902e65/645a05a2310000532a902e66.png" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://encrypted-tbn0.gstatic.com/" target="_blank">
+
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHwdxkiV5Fh1K1RQwL1OOUrV0jqEx5p_u_SA&usqp=CAU" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                  </ul>
+                </div>
+
+
+
+                <h3 style="text-align: left;font-size: 3vw">Les entrepise par secteur <b style="color:red">l'hôtellerie  <a class="btn btn-success btn-sm"  href="{{url_for('hôtellerie')}}" role="button">see all</a></b></h3>
+                <h4> <a href="{{url_for('enterprise_register_by_admin')}}" class="btn btn-primary" style="font-size: 10px">ajouter votre propre entreprise dans ce secteur</a>  </h4>
+
+                <div class="scroller" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+                    <li><a href="https://www.voyages-d-affaires.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://www.voyages-d-affaires.com/wp-content/uploads/2020/11/douala-falaise.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://luxus-plus.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://luxus-plus.com/wp-content/uploads/2020/09/Accra-Marriott-Hotel.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://encrypted-tbn0.gstatic.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-1Nklic21n9btzCOy-8fztsZr8R-b1R7b8w&usqp=CAU" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://static.latribune.fr/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://static.latribune.fr/article_body/764410/cityblue.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://encrypted-tbn0.gstatic.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-O0K-zq2D4eNmX_XlMr88pVj69ybVXypCf76uMrEpotFISge8mCHbgFGu-PF6CDj7GMU&usqp=CAU" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://prod-backsite.ecomatin.be/" target="_blank">
+
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://prod-backsite.ecomatin.be/wp-content/uploads/2020/08/marr1.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                  </ul>
+                </div>
+
+
+
+                <h3 style="text-align: left;font-size: 3vw">Les entrepise par secteur <b style="color:red">banque et
+                    <br> micro finance  <a class="btn btn-success btn-sm"  href="{{url_for('banque_et_micro_finance')}}" role="button">see all</a></b></h3>
+                <h4> <a href="{{url_for('enterprise_register_by_admin')}}" class="btn btn-primary" style="font-size: 10px">Ajouter votre propre entreprise dans ce secteur</a>  </h4>
+
+                <div class="scroller" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+                    <li><a href="https://www.universfinances.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://www.universfinances.com/wp-content/uploads/2021/06/logo.png" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://play-lh.googleusercontent.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://play-lh.googleusercontent.com/mcyBdsXpgGcmYe4_a0iEkRZISX5BFoZC_KUC5Eo9NfDkyDM1k5hKqy2WFGCEpqk5s-o" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://upload.wikimedia.org/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://upload.wikimedia.org/wikipedia/fr/e/eb/Logo_Afriland.png" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://figec-sa.com/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://figec-sa.com/media/images/settings/302246947_587140493107599_2584566939087939846_n.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://www.businesslist.co.cm/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://www.businesslist.co.cm/img/cm/b/1647190702-80-ecobank.jpg" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://www.unionbankcameroon.com/" target="_blank">
+
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="https://www.unionbankcameroon.com/wp-content/uploads/2023/07/Logo-Short-1.png" class="card-img-top" alt="nothing">
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                  </ul>
+                </div>
+
+
+
+
+
+
+
+
+           </ul>
+
+       </div>
+                    <h4>Vous ne trouvez pas votre secteur ? <a href="{{url_for('client_request_to_add')}}">Enregistrez votre entreprise en précisant le secteur.</a> </h4>
+
+                    <style>
+                    .nelly{
+                    width: 150px;
+                    height: 150px
+                    }
+                    .nelly{
+                      display: flex;
+                      flex-direction: row;
+                    }
+
+                    @media screen and (max-width: 800px) {
+                      .row {
+                        flex-direction: row;
+                      }
+                    }
+
+
+
+                </style>
+
+
+
+        <script>
+        const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src=" {{ url_for('static', filename='main.js') }} "></script>
+  </body>
+</html>

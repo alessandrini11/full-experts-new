@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>kyc_admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+<div class="container cards">
+    <p>
+        {% for c in kyc %}
+            <div class="card text-white bg-success mb-3 container" style="max-width: 18rem;">
+              <div class="card-header">client's name: {{c.nom}}</div>
+              <div class="card-body">
+                <h5 class="card-title">email: {{c.email}}</h5>
+                <p class="card-text">
+                    country: {{c.pays}}<br>
+                   Tel: {{c.telephone}}<br>
+                    town:{{c.ville}}<br>
+                    sector: {{c.secteur}}<br>
+                    other sector: {{c.other_sector}}<br>
+                    have company? : {{c.have_company}}<br>
+                    have no company? :{{c.have_no_company}}<br>
+                    the problem: {{c.problem}}<br>
+                    the client id: {{c.id_user}}<br>
+                    sent on: {{c.date}}<br>
+                </p>
+              </div>
+            </div>
+
+        {% endfor %}
+    </p>
+</div>
+
+</body>
+</html>

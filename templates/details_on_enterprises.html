@@ -1,0 +1,423 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>liste d'entreprise au cameroun</title>
+  </head>
+  <body>
+
+      {% include 'new_navbar.html'  %}
+
+    <br/>
+
+
+<div class="container" style="position:relative; margin-top:100px">
+
+    <div class="row">
+
+        <div class="col-lg-3 d-none d-md-block">
+            <ul class="list-group shadow bg-white rounded sticky-top">
+
+
+                <h1 style="text-align: center">Links you might be interested in!</h1>
+
+                <div class="scroller" data-speed="fast">
+                  <ul class="tag-list scroller__inner">
+                    <li><a href="http://www.e-santecameroun.cm" target="_blank">e-sante</a></li>
+                    <li> <a href="#" target="_blank">full Experts</a></li>
+                    <li><a href="https://www.ubacameroon.com" target="_blank">UBA</a></li>
+                    <li><a href="http://eneocameroon.cm/" target="_blank">ENEO</a></li>
+                    <li><a href="https://www.mtn.cm/" target="_blank">MTN Cameroon</a></li>
+                    <li> <a href="https://www.orange.cm" target="_blank">ORANGE Cameroon</a></li>
+                  </ul>
+                </div>
+
+                <div class="scroller" data-direction="right" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+
+                      <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                          <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" alt="logo of full experts consulting" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="http://eneocameroon.cm/">
+                          <img src="{{ url_for('static', filename='uploads/bc8a6841-093f-11ef-bd8e-181dea30d9cc_eneo.PNG') }}" alt="logo of eneo" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.mtn.cm/">
+                          <img src="{{ url_for('static', filename='uploads/eadc367b-0b9e-11ef-9e3d-181dea30d9cc_mtn.PNG') }}" alt="logo of mtn" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.ubacameroon.com">
+                          <img src="{{ url_for('static', filename='uploads/3faed2b4-0ba2-11ef-adff-181dea30d9cc_uba.PNG') }}" alt="logo of uba" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                     <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.orange.cm">
+                          <img src="{{ url_for('static', filename='uploads/deb58242-0ba3-11ef-86a0-181dea30d9cc_orange.PNG') }}" alt="logo of orange" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+
+                       <div class="container-fluid">
+                        <a class="navbar-brand" href="http://www.e-santecameroun.cm/">
+                          <img src="{{ url_for('static', filename='uploads/4bbae00f-093c-11ef-8957-181dea30d9cc_esante.JPG') }}" alt="logo of e-sante" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+
+                  </ul>
+                </div>
+
+                <a class="yt" href="#">
+                  Full Experts Consulting
+                </a>
+
+            WITH US, YOUR BUSINESS IS SAFE. THE FULL EXPERTS TEAM
+            </ul>
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-md-6">
+
+             <p><h1 style="color:red">Detail information on this enterprise</h1> </p>
+            <div class="card shadow bg-white rounded">
+
+                <div class="shadow p-3 mb-5 bg-body rounded" id="box">
+
+                    <div class="card mb-3 mx-auto " style="max-width: 840px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+
+                              {% if post.logo %}
+                                 <img src="{{ url_for('static', filename='uploads/' + post.logo) }}" class="card-img-top img-fluid" alt="nothing">
+
+                              {% else %}
+                                 <img src="{{ url_for('static', filename='uploads/default.PNG') }}" class="card-img-top img-fluid" alt="photo">
+
+                              {% endif %}
+
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body ">
+                              <h1 class="card-title">{{post.nom_enterprise}}</h1>
+                                <div class="cards" >
+                                    <p class="card-text">
+                                        <a class="btn btn-primary btn-sm" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Contact
+                                        </a>
+                                        <div class="collapse" id="collapseExample1">
+                                          <div class="card card-body">
+                                            <p>
+                                                Call the Enterprise at: {{post.enterprise_tel}}<br>
+                                                Email the Enterprise at: {{post.email_enterprise}}<br>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </p>
+
+                                      <p class="card-text">
+                                        <a class="btn btn-info btn-sm" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Objectives
+                                        </a>
+                                        <div class="collapse" id="collapseExample2">
+                                          <div class="card card-body">
+                                            <p>
+                                                {{post.enterprise_desc}}
+                                            </p>
+
+                                          </div>
+                                        </div>
+                                      </p>
+
+                                        <p class="card-text">
+                                                <a class="btn btn-danger btn-sm" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Location
+
+                                            </a>
+                                            <div class="collapse" id="collapseExample3">
+                                              <div class="card card-body">
+
+                                                <p>
+                                                    {{post.location}}
+                                                </p>
+                                                <br>
+                                              </div>
+                                            </div>
+                                        </p>
+                                      <p class="card-text">
+                                         <a class="btn btn-success btn-sm"  href="{{post.google_map}}" role="button" target="_blank" >
+                                             Map
+                                        </a>
+                                      </p>
+                                      <p class="card-text">
+                                         <a class="btn btn-secondary btn-sm"  href="{{post.url}}" role="button" target="_blank">
+                                        website
+                                        </a>
+                                      </p>
+
+                                    <p class="card-text">
+                                         <a class="btn btn-secondary btn-sm"  href="{{url_for('comment')}}" role="button" >
+                                        message
+                                        </a>
+                                    </p>
+
+                                    <p class="card-text">
+                                                <a class="btn btn-danger btn-sm" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                comments
+                                            </a>
+                                            <div class="collapse" id="collapseExample4">
+                                              <div class="card card-body">
+
+                                                <p>
+                                                  <h5> <b>Comments from people</b> </h5>
+                                                  <hr>
+                                                    <div class=" scrollable">
+                                                        {% for c in commen %}
+                                                        {% if c.enterprise_name == post.email_enterprise %}
+                                                            <div class="shadow p-3 mb-5 bg-body rounded">
+                                                                <h6> <b> {{c.comment}}</b></h6>
+                                                                <br>
+                                                                <h6>By {{c.name}}</h6>
+                                                                <h10>Tel: {{c.telephone}}, email: {{c.email}}</h10>
+                                                                <br>
+                                                                <h11>Posted on: {{c.date}}</h11>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </div>
+                                                  <hr>
+                                                </p>
+                                                <br>
+                                              </div>
+                                            </div>
+                                        </p>
+
+
+
+
+                                </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+
+            </div>
+
+            <hr class="d-sm-none">
+        </div>
+        <div class="col-md-3 d-none d-md-block">
+            <ul class="list-group shadow bg-white rounded sticky-top">
+
+
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+
+                        <div class="card" style="width: 18rem;">
+                            <img src="" align="middle" />
+                          <img src="{{url_for('static', filename='uploads/eadc367b-0b9e-11ef-9e3d-181dea30d9cc_mtn.PNG')}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">MTN Cameroon</h5>
+                            <p class="card-text">MTN Cameroon, Leader du marché de la Télécommunication s'ouvre à vous. Rejoignez-nous maintenant. situe a Akwa, 360 rue Drout, Douala, Cameroon 6 79 00 90 40</p>
+                            <a href="https://www.mtn.cm/" class="btn btn-primary" target="_blank">Visite the site</a>
+                          </div>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                          <img src="{{url_for('static', filename='uploads/bc8a6841-093f-11ef-bd8e-181dea30d9cc_eneo.PNG')}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Eneo Cameroon</h5>
+                            <p class="card-text">Opérateur historique du secteur électrique au Cameroun, Eneo ambitionne de fournir en toute sécurité.</p>
+                            <a href="https://www.eneocameroon.cm" class="btn btn-primary" target="_blank">Visit the site</a>
+                          </div>
+                        </div>
+
+
+                </div>
+                  <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                          <img src="{{url_for('static', filename='uploads/deb58242-0ba3-11ef-86a0-181dea30d9cc_orange.PNG')}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Fondation Orange Cameroun</h5>
+                            <p class="card-text">La Fondation Orange Cameroun est une fondation d'entreprise engagée dans le mécennat, ayant pour objet le soutien des causes visant à la valorisation de l'expression humaine dans les domaines de la santé & handicap, de l'éducation et de la culture.</p>
+                            <a href="https://www.orange.cm" class="btn btn-primary" target="_blank">Visit the site</a>
+                          </div>
+                            </div>
+                  </div>
+
+                  <div class="carousel-item">
+                            <div class="card" style="width: 18rem;">
+                          <img src="{{url_for('static', filename='uploads/4bbae00f-093c-11ef-8957-181dea30d9cc_esante.JPG')}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">E-Santé Cameroun</h5>
+                            <p class="card-text">Nous faisons dans la médecine de famille, la médecine préventive! Assistance et Production des lo </p>
+                            <a href="https://www.e-santecameroun.cm/" class="btn btn-primary" target="_blank">Visit the site</a>
+                          </div>
+                            </div>
+                  </div>
+
+                <div class="carousel-item">
+
+                    <div class="card" style="width: 18rem;">
+                          <img src="{{url_for('static', filename='uploads/3faed2b4-0ba2-11ef-adff-181dea30d9cc_uba.PNG')}}" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">United Bank for Africa</h5>
+                            <p class="card-text">Financial service</p>
+                            <a href="https://www.ubacameroon.com" class="btn btn-primary">Visit the site</a>
+                          </div>
+                        </div>
+
+
+                </div>
+              </div>
+
+            </div>
+
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="card bg-dark text-white">
+                              <img src="{{url_for('static', filename='uploads/4bbae00f-093c-11ef-8957-181dea30d9cc_esante.JPG')}}" class="card-img" alt="...">
+                              <div class="card-img-overlay">
+                                <h5 class="card-title">E-Santé Cameroun</h5>
+                                <p class="card-text">Nous faisons dans la médecine de famille, la médecine préventive! Assistance et Production des lo.</p>
+                                <p class="card-text">Last updated 40 mins ago</p>
+                              </div>
+                            </div>
+
+
+                        </div>
+                        <div class="carousel-item">
+
+
+                            <div class="card bg-dark text-white">
+                              <img src="{{url_for('static', filename='uploads/3faed2b4-0ba2-11ef-adff-181dea30d9cc_uba.PNG')}}" class="card-img" alt="...">
+                              <div class="card-img-overlay">
+                                <h5 class="card-title">United bank for Africa</h5>
+                                <p class="card-text">Financial service</p>
+                                <p class="card-text">Last updated 100 mins ago</p>
+                              </div>
+                            </div>
+
+
+
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+
+
+
+
+            </ul>
+            <hr class="d-sm-none">
+        </div>
+    </div>
+</div>
+
+      <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+      <script>
+
+                  // Select all elements with the ID "box"
+        const boxes = document.querySelectorAll('#box');
+
+        // Add an event listener to execute the checkBoxes function when the window scrolls
+        window.addEventListener('scroll', checkBoxes);
+
+        // Call the checkBoxes function initially to check visibility on page load
+        checkBoxes();
+
+        function checkBoxes() {
+          // Calculate the trigger point for visibility (4/5th of the viewport height)
+          const triggerBottom = window.innerHeight * 0.7; // Using 0.7 for clarity
+
+          // Loop through each box element
+          boxes.forEach(box => {
+            // Get the distance from the top of the viewport to the top of the box
+            const boxTop = box.getBoundingClientRect().top;
+
+            // Check if the box is within the trigger point
+            if (boxTop < triggerBottom) {
+              // If visible, add the 'show' class
+              box.classList.add('show');
+            } else {
+              // If not visible, remove the 'show' class
+              box.classList.remove('show');
+            }
+          });
+}
+
+
+
+
+
+
+const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+
+
+
+      </script>
+<!--      <script src=" {{ url_for('static', filename='app.js') }} "></script>-->
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+
+
+
+
+

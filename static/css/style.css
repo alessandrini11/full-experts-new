@@ -1,0 +1,329 @@
+//static/css/style.css
+body {
+  background-color: #435165;
+  margin: 0;
+}
+
+.login-box
+ {
+  height: 50%;
+  width: 50%;
+  border: 1px solid grey;
+  margin-left: 20%;
+  margin-top: 10%;
+  position: relative;
+       box-shadow: 21px 12px 24px 10px rgba(0, 0, 0, .5);
+       background: #dadada;
+ }
+ .login-header
+ {
+  text-align: center;
+  font-family: "vardhana",cursive;
+  font-size: 35px;
+  background: linear-gradient(to bottom, #00bfff 0%, #5b6d7c 100%);
+  color:#fff;
+  position: relative;
+       box-shadow: 1px 3px 14px  rgba(0, 0, 0, .5);
+ }
+ .login-body
+ {
+  padding: 20px;
+  line-height: 2;
+ }
+.msg {
+color: #721c24;
+   background-color: #f8d7da;
+   border-color: #f5c6cb;
+padding: .75rem 1.25rem;
+   margin-bottom: 1rem;
+   border: 1px solid transparent;
+   border-radius: .25rem;
+}
+.main{
+ margin-top:50px;
+}
+
+h1.title {
+font-size: 50px;
+font-family: 'Passion One', cursive;
+font-weight: 400;
+}
+
+hr{
+width: 10%;
+color: #fff;
+}
+
+.form-group{
+margin-bottom: 15px;
+}
+
+label{
+margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+   font-size: 11px;
+   padding-top: 3px;
+}
+
+.main-login{
+ background-color: #fff;
+   /* shadows and rounded borders */
+   -moz-border-radius: 2px;
+   -webkit-border-radius: 2px;
+   border-radius: 2px;
+   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+.form-control {
+   height: auto!important;
+padding: 8px 12px !important;
+}
+.input-group {
+   -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+.main-center{
+ margin-top: 30px;
+ margin: 0 auto;
+ max-width: 400px;
+   padding: 10px 40px;
+background:#5b6d7c;
+    color: #FFF;
+   text-shadow: none;
+-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
+
+}
+span.input-group-addon i {
+   color: #fff;
+   font-size: 17px;padding:10px;
+}
+
+.login-button{
+margin-top: 5px;
+}
+
+.login-register{
+font-size: 11px;
+text-align: center;
+}
+
+.site-header {
+   background-color: rgba(0, 0, 0, .85);
+   -webkit-backdrop-filter: saturate(180%) blur(20px);
+   backdrop-filter: saturate(180%) blur(20px);
+}
+.site-header a {
+color:#fff;
+}
+
+
+.heroo {
+	background-image: url("admin_pic.PNG");
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+	height: 750px;
+}
+
+
+
+
+.hero {
+	background-image: url(https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXIlMjBnaXJsfGVufDB8fDB8fHww);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+	height: 750px;
+}
+
+/*.hero {
+	background-image: url(https://images.unsplash.com/photo-1544717302-de2939b7ef71?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y29tcHV0ZXIlMjBnaXJsfGVufDB8fDB8fHww);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+}*/
+
+.hero_register{
+	background-image: url(https://blog.researchandranking.com/wp-content/uploads/2022/12/P2P-Online.jpg);
+	background-size: cover;
+	background-position: top center;
+	position: relative;
+	z-index: 1;
+	height: 750px;
+}
+
+#hh {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  left: 70%;
+}
+
+#tt{
+background-color: yellow;
+}
+
+@media (max-width: 768px) {
+  #hh {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 768px) {
+  #hh {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+
+
+
+
+
+
+#box:nth-of-type(even) {
+transform: translateX(-400%);
+}
+
+#box:nth-of-type(odd) {
+transform: translateX(-400%);
+}
+
+
+#box{
+
+transition: transform 1s ease;
+}
+
+#box.show{
+transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+.scroller {
+  max-width: 600px;
+}
+
+.scroller__inner {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+.scroller[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 40s)
+    var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller[data-speed="fast"] {
+  --_animation-duration: 20s;
+}
+
+.scroller[data-speed="slow"] {
+  --_animation-duration: 60s;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+/* general styles */
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: hsl(217, 33%, 17%);
+  --clr-primary-900: hsl(218, 33%, 9%);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--clr-primary-800);
+}
+
+.tag-list {
+  margin: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  background: var(--clr-primary-400);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem var(--clr-primary-900);
+}
+
+/* for testing purposed to ensure the animation lined up correctly */
+.test {
+  background: red !important;
+}
+
+.cards{
+display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+.scrollable {
+overflow: auto;
+height: 200px;
+}

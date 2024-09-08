@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message_admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+<div class="container">
+    <p>
+        <div class="container cards">
+    <p class="container">
+        {% for c in messages %}
+        <div class="card text-white bg-primary mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">{{c.messages}}</div>
+          <div class="card-body">
+            <h5 class="card-title">client email: {{c.email}}</h5>
+            <p class="card-text">
+                client full name: {{c.name}}<br>
+                 client id: {{c.id}}<br>
+                sent on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+    </p>
+</div>
+    </p>
+</div>
+
+</body>
+</html>

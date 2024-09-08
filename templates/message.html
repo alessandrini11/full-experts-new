@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>message</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+{% include 'navbar.html'  %}
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+     <p class="card-text">
+         <a class="btn btn-danger btn-sm"  href="{{url_for('searches')}}" role="button" >
+             BACK TO MENU
+         </a>
+     </p>
+
+    <p><h2>To write a comment about this enterprise, you must provide us you credentials</h2></p>
+         {%  with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for msg in messages %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                          <p>{{ msg }}</p>
+                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                {% endfor %}
+            {% endif %}
+          {% endwith %}
+
+     <form class="row g-3" action="{{url_for('comment')}}" method="POST">
+        <div class="input-group mb-3">
+<!--          <span class="input-group-text" id="basic-addon1">@Ngali</span>-->
+          <input type="text" class="form-control" name="name" placeholder="Your Name e.g Ngali Abiru" aria-label="Username" aria-describedby="basic-addon1" required>
+        </div>
+        <label for="basic-urls" class="form-label"> Put The enterprise email you are commenting on. Click on contact to see the email</label>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="basic-urls" name="emails_enterprise" placeholder="Enterprise Email" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+<!--          <span class="input-group-text" id="basic-addon2">@Ngali</span>-->
+        </div>
+
+        <label for="basic-url" class="form-label">Your Email Address</label>
+        <div class="input-group mb-3">
+<!--          <span class="input-group-text" id="basic-addon3">@Ngali</span>-->
+          <input type="text" name="email" class="form-control" id="basic-url" placeholder="e.g ngali@gmail.com"  aria-describedby="basic-addon3" required>
+        </div>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Your Telephone Number" name="telephone" aria-label="Username" required>
+        </div>
+
+        <div class="input-group">
+<!--          <span class="input-group-text">Comment Here</span>-->
+          <textarea class="form-control" aria-label="With textarea" placeholder="Comment Here" name="comments"  required></textarea>
+        </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Sumit your comment</button>
+          </div>
+     </form>
+
+
+
+
+
+</div>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

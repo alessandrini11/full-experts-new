@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>enterprise_admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+<div class="container">
+    <p>
+        <div class="container cards">
+
+        <p class="container">
+            <a class="btn btn-success btn-sm"  href="{{url_for('enterprise_register_by_admin')}}" role="button">
+                                                         create
+                                              </a>
+        {% for e in enterprise %}
+
+        <div class="card text-white bg-secondary mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">enterprise name: {{e.nom_enterprise}}</div>
+          <div class="card-body">
+            <h5 class="card-title">Tel: {{e.enterprise_tel}}</h5>
+            <p class="card-text">
+                enterprise id: {{e.id}}<br>
+                email: {{e.email_enterprise}}<br>
+                the owner id:{{e.id_user}}<br>
+                registered on: {{e.date}}<br>
+            </p>
+          </div>
+        </div>
+       {% endfor %}
+    </p>
+
+</div>
+</div>
+
+</body>
+</html>

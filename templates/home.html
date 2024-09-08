@@ -1,0 +1,130 @@
+
+{% include 'layout.html' %}
+  
+{% block title %}Home{% endblock %}
+  
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+    <h1 class="h2" style="color: white">Your Dashboard</h1>
+    <p style="color: white">Welcome back, {{ username }}!</p>
+    <hr>
+
+    <p>
+    <h1 style="color: white">Does your enterprise have a website? If no, we can create one for you. Just <a href="{{url_for('send_message')}}">contact us</a></h1>
+        <h2 style="color: white">Our recommendation for you today!</h2>
+    </p>
+    <p>
+    </p>
+    <div class="container">
+
+
+    <!--   <h1 style="text-align: center">Links you might be interested in!</h1>-->
+
+                    <div class="scroller" data-speed="fast">
+                      <ul class="tag-list scroller__inner">
+                        <li><a href="http://www.e-santecameroun.cm" style="font-size: 4vw; color:red;" target="_blank">e-sante</a></li>
+                        <li> <a href="#" style="font-size: 4vw; color:red;">full Experts</a></li>
+                        <li><a href="https://www.ubacameroon.com" style="font-size: 4vw; color:red;" target="_blank">UBA</a></li>
+                        <li><a href="http://eneocameroon.cm/" style="font-size: 4vw; color:red;" target="_blank">ENEO</a></li>
+                        <li><a href="https://www.mtn.cm/" style="font-size: 4vw; color:red;" target="_blank">MTN Cameroon</a></li>
+                        <li> <a href="https://www.orange.cm" style="font-size: 4vw; color:red;" target="_blank">ORANGE Cameroon</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="scroller" data-direction="right" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+
+                      <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                          <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" alt="logo of full experts consulting" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="http://eneocameroon.cm/">
+                          <img src="{{ url_for('static', filename='uploads/bc8a6841-093f-11ef-bd8e-181dea30d9cc_eneo.PNG') }}" alt="logo of eneo" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.mtn.cm/">
+                          <img src="{{ url_for('static', filename='uploads/eadc367b-0b9e-11ef-9e3d-181dea30d9cc_mtn.PNG') }}" alt="logo of mtn" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.ubacameroon.com">
+                          <img src="{{ url_for('static', filename='uploads/3faed2b4-0ba2-11ef-adff-181dea30d9cc_uba.PNG') }}" alt="logo of uba" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+                     <div class="container-fluid">
+                        <a class="navbar-brand" href="https://www.orange.cm">
+                          <img src="{{ url_for('static', filename='uploads/deb58242-0ba3-11ef-86a0-181dea30d9cc_orange.PNG') }}" alt="logo of orange" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+
+                       <div class="container-fluid">
+                        <a class="navbar-brand" href="http://www.e-santecameroun.cm/">
+                          <img src="{{ url_for('static', filename='uploads/4bbae00f-093c-11ef-8957-181dea30d9cc_esante.JPG') }}" alt="logo of e-sante" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+                        </a>
+                      </div>
+
+                  </ul>
+                </div>
+
+                    <a class="yt" href="#">
+                      Full Experts Consulting
+                    </a>
+
+
+    </div>
+
+
+</div>
+
+
+<script>
+
+    const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+

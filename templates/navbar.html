@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" alt="logo of full experts consulting" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+      FULL EXPERTS CONSULTING
+    </a>
+  </div>
+  </nav>
+
+
+  <div class="container-fluid">
+     <a class="nav-link" href="{{url_for('search_bar')}}"> MENU</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{url_for('index')}}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{url_for('login')}}">Register Enterprise</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Update information
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{url_for('login')}}">Edit your enterprise</a></li>
+            <li><a class="dropdown-item" href="{{url_for('login')}}">Edit you account</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{url_for('send_message')}}">Contact us for Enquiries</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form method="GET" class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search by name, activity or location(quarter)" aria-label="Search" name="q" required>
+        <button class="btn btn-outline-success" type="submit">Search for Enterprise</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<li class="nav-item">
+
+</li>

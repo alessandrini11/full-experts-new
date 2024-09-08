@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin_page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" alt="logo of full experts consulting" width="90" height="64" class="d-inline-block align-text-top img-fluid">
+      FULL EXPERTS CONSULTING
+    </a>
+      <br>
+      <h1 style="color: white; font-size: 4vw;" >Admin Home Page</h1>
+
+  </div>
+      <h2><a href="{{ url_for('logouts') }}" class="cta">Logout</a></h2>
+  </nav>
+  </nav>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<div class="container">
+    <button type="button" class="btn btn-primary btn-lg" ><a href="{{url_for('user_admin')}}" style="color:white">USERS</a></button>
+    <button type="button" class="btn btn-secondary btn-lg"><a href="{{url_for('enterprise_admin')}}" style="color:white">ENTERPRISES</a></button>
+    <button type="button" class="btn btn-primary btn-lg"> <a href="{{url_for('kyc_admin')}}" style="color:white">KYC</a></button>
+    <button type="button" class="btn btn-secondary btn-lg"><a href="{{url_for('context_admin')}}" style="color:white">CONTEXT</a></button>
+    <button type="button" class="btn btn-primary btn-lg"><a href="{{url_for('service_admin')}}" style="color:white">SERVICES</a></button>
+    <button type="button" class="btn btn-secondary btn-lg"><a href="{{url_for('comment_admin')}}" style="color:white">COMMENTS</a></button>
+    <button type="button" class="btn btn-primary btn-lg"><a href="{{url_for('message_admin')}}" style="color:white">MESSAGES</a></button>
+    <button type="button" class="btn btn-secondary btn-lg"><a href="{{url_for('publicity_admin')}}" style="color:white">PUBLICITY</a></button>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>service_admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+<br>
+<div>
+    <div class="cards container">
+       {% for c in montageProjet %}
+        <div class="card text-white bg-primary mb-3 container" style="max-width: 18rem; margin: auto;">
+          <div class="card-header">client's name: {{c.name}}</div>
+          <div class="card-body">
+            <h5 class="card-title">service No: {{c.Service_number}}</h5>
+            <p class="card-text">
+                client's id: {{c.id}}<br>
+                client's email: {{c.email}}<br>
+                Tel:{{c.telephone}}<br>
+                submitted on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for c in etudeMarche %}
+        <div class="card text-white bg-info mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">client's name: {{c.name}}</div>
+          <div class="card-body">
+            <h5 class="card-title">Service No: {{c.Service_number}}</h5>
+            <p class="card-text">
+                client's id: {{c.id}}<br>
+                client's email: {{c.email}}<br>
+                Tel:{{c.telephone}}<br>
+                submitted on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for c in marketing %}
+        <div class="card text-white bg-warning mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">client's name: {{c.name}}</div>
+          <div class="card-body">
+            <h5 class="card-title">Service No: {{c.Service_number}}</h5>
+            <p class="card-text">
+                client's id: {{c.id}}<br>
+                client's email: {{c.email}}<br>
+                Tel:{{c.telephone}}<br>
+                submitted on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for c in formation %}
+        <div class="card text-white bg-secondary mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">client's name: {{c.name}}</div>
+          <div class="card-body">
+            <h5 class="card-title">Service No: {{c.Service_number}}</h5>
+            <p class="card-text">
+                client's id: {{c.id}}<br>
+                client's email: {{c.email}}<br>
+                Tel:{{c.telephone}}<br>
+                submitted on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for c in doctoral %}
+        <div class="card text-white bg-success mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">client's name: {{c.name}}</div>
+          <div class="card-body">
+            <h5 class="card-title">Service No: {{c.Service_number}}</h5>
+            <p class="card-text">
+                client's id: {{c.id}}<br>
+                client's email: {{c.email}}<br>
+                Tel:{{c.telephone}}<br>
+                submitted on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for c in risk %}
+        <div class="card text-white bg-success mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">client's name: {{c.name}}</div>
+          <div class="card-body">
+            <h5 class="card-title">Service No: {{c.Service_number}}</h5>
+            <p class="card-text">
+                client's id: {{c.id}}<br>
+                client's email: {{c.email}}<br>
+                Tel:{{c.telephone}}<br>
+                submitted on: {{c.date}}<br>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

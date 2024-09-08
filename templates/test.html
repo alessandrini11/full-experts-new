@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pub_page.css') }}">
+    <title>Liste of enterprise in cameroon, Liste des entreprise au cameroun.</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">FULL EXPERTS</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="{{url_for('index')}}">HOME</a></li>
+        <li><a href="#">Register an Enterprise</a></li>
+        <li><a href="#">CONTACT US</a></li>
+         <li><a href="{{url_for('searches')}}" data-after="Contact">List of Enterprises</a></li>
+          <li>
+
+          </li>
+
+      </ul>
+<!--      <div class="nav__btns">-->
+<!--        <button class="btn"><i class="ri-search-line"></i></button>-->
+<!--        <button class="btn"><i class="ri-shopping-bag-line"></i></button>-->
+<!--      </div>-->
+    </nav>
+
+<!--    <div class="conatainer">-->
+<!--             <div class="input-group mb-3">-->
+<!--                  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">-->
+<!--                  <button class="btn btn-danger" type="button" id="button-addon2">search</button>-->
+<!--                </div>-->
+<!--    </div>-->
+
+
+    <div class="container">
+
+
+      <div class="container__left">
+
+<!--        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">-->
+<!--  <div class="carousel-inner">-->
+<!--    <div class="carousel-item active">-->
+<!--      <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" class="d-block w-100" alt="...">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="https://images.ctfassets.net/hrltx12pl8hq/01rJn4TormMsGQs1ZRIpzX/16a1cae2440420d0fd0a7a9a006f2dcb/Artboard_Copy_231.jpg?fit=fill&w=600&h=600" class="d-block w-100" alt="...">-->
+<!--    </div>-->
+<!--    <div class="carousel-item">-->
+<!--      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Dw7-4lVfRq74_YEiPEt4e-bQ0_6UA2y73Q&s" class="d-block w-100" alt="...">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+          <h1>
+                     <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+                      <div class="container-fluid">
+                          <h6>Recherchez une entreprise qui commence par:(tapez la première lettre du nom de l'entreprise)</h6>
+                        <form class=" d-grid gap-2 d-md-flex justify-content-md-end">
+                          <input class="form-control me-2" type="search" placeholder="e.g k, g,a, c, etc" aria-label="Search">
+                          <button class="btn btn-danger" type="submit">Search</button>
+                        </form>
+
+                      </div>
+                    </nav>
+
+
+
+              <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+
+           <div class="card" style="width: 18rem;">
+          <img src="https://gnius.esante.gouv.fr/sites/default/files/2021-06/LOGO_Business-France-fond-blanc.jpg" class="card-img-top" alt="photo">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+            <a href="#" class="btn btn-primary">see details</a>
+          </div>
+        </div>
+
+    </div>
+
+<!--                    <div class=" carousel-item card bg-dark text-white" data-bs-interval="2000">-->
+<!--                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Dw7-4lVfRq74_YEiPEt4e-bQ0_6UA2y73Q&s" class="card-img" alt="...">-->
+<!--                  <div class="card-img-overlay">-->
+<!--                    <h5 class="card-title">Card title</h5>-->
+<!--                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--                    <p class="card-text">Last updated 3 mins ago</p>-->
+<!--                  </div>-->
+<!--                </div>-->
+
+    <div class="carousel-item" data-bs-interval="2000">
+
+           <div class="card" style="width: 18rem;">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTERcV-R_A_p_HzlE4cafUMNnaYAwRtu27wh716rlruXXcqrW43nU5UMp0BqPRmpexzU7c&usqp=CAU" class="card-img-top" alt="photo">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+            <a href="#" class="btn btn-primary">see details</a>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="carousel-item">
+
+         <div class="card" style="width: 18rem;">
+          <img src="https://world.businessfrance.fr/app/uploads/sites/13/2024/02/bms-consulting-logo.jpg.webp" class="card-img-top" alt="photo">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+<!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+            <a href="#" class="btn btn-primary">see details</a>
+          </div>
+        </div>
+
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>
+
+          </h1>
+
+
+<!--          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">-->
+<!--            <div class="carousel-inner">-->
+<!--              <div class="carousel-item active" data-bs-interval="10000">-->
+<!--                <img src="https://images.ctfassets.net/hrltx12pl8hq/28ECAQiPJZ78hxatLTa7Ts/2f695d869736ae3b0de3e56ceaca3958/free-nature-images.jpg?fit=fill&w=1200&h=630" class="d-block w-100" alt="...">-->
+<!--              </div>-->
+<!--              <div class="carousel-item" data-bs-interval="2000">-->
+<!--                <img src="https://images.ctfassets.net/hrltx12pl8hq/01rJn4TormMsGQs1ZRIpzX/16a1cae2440420d0fd0a7a9a006f2dcb/Artboard_Copy_231.jpg?fit=fill&w=600&h=600" class="d-block w-100" alt="...">-->
+<!--              </div>-->
+<!--              <div class="carousel-item">-->
+<!--                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Dw7-4lVfRq74_YEiPEt4e-bQ0_6UA2y73Q&s" class="d-block w-100" alt="...">-->
+<!--              </div>-->
+<!--            </div>-->
+<!--              <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--              <span class="visually-hidden">Previous</span>-->
+<!--            </button>-->
+<!--            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">-->
+<!--              <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--              <span class="visually-hidden">Next</span>-->
+<!--            </button>-->
+<!--          </div>-->
+
+
+
+
+        <div class="container__btn">
+          <button class="btn">Achetez des espaces publicitaires</button>
+        </div>
+      </div>
+      <div class="container__right">
+        <div class="images">
+
+          <div class="tent-1">
+
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+
+                                <div class="card" style="width: 18rem;">
+                                  <img src="https://www.businesslist.co.cm/img/cm/s/1512039836-52-african-engineering-services-company.jpg" class="card-img-top" alt="photo">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                        <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                                    <a href="#" class="btn btn-primary">see details</a>
+                                  </div>
+                                </div>
+
+                        </div>
+                        <div class="carousel-item">
+
+
+                              <div class="card" style="width: 18rem;">
+                              <img src="https://www.minpmeesa.cm/site/inhoud/uploads/2018/11/logo-1.png" class="card-img-top" alt="photo">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                    <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                                <a href="#" class="btn btn-primary">see details</a>
+                              </div>
+                            </div>
+
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+
+          </div>
+
+
+          <div class="tent-2">
+            <div id="carouselExampleFade1" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+
+                              <div class="card" style="width: 18rem;">
+                              <img src="https://www.businesslist.co.cm/img/cm/x/1629968412-24-bw-group-ltd.png" class="card-img-top" alt="photo">
+                              <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                    <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                                <a href="#" class="btn btn-primary">see details</a>
+                              </div>
+                            </div>
+
+                        </div>
+                        <div class="carousel-item">
+
+                               <div class="card" style="width: 18rem;">
+                                  <img src="https://www.businesslist.co.cm/img/cm/z/1576726102-17-canestech-inc.png" class="card-img-top" alt="photo">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                        <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+                                    <a href="#" class="btn btn-primary">see details</a>
+                                  </div>
+                               </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade1" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                </div>
+
+          </div>
+
+
+
+<!--          <img src="assets/tent-1.jpg" alt="tent-1" class="tent-1" />-->
+<!--          <img src="assets/tent-2.jpg" alt="tent-2" class="tent-2" />-->
+        </div>
+
+        <div class="content">
+          <h4>We | the best</h4>
+          <h2>FULL EXPERTS</h2>
+          <h3> la page de la publicité</h3>
+          <p>
+            Ici, nous rassemblons toutes les entreprises du Cameroun pour une meilleure visibilité.
+              Si vous êtes intéressé par l'enregistrement de votre entreprise sur notre site et/ou par
+              le paiement d'un espace publicitaire, n'hésitez pas à <a href="#">nous contacter</a> .
+          </p>
+        </div>
+      </div>
+        <br>
+      <div class="location">
+        <span><i class="ri-map-pin-2-fill"></i></span>
+        OUR LOCATION
+      </div>
+      <div class="socials">
+        <span>
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+        </span>
+        <span>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+        </span>
+        <span>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </span>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+    <div class="container d-grid gap-2 d-md-flex justify-content-md-end">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+          <h6>Recherchez une entreprise par nom</h6>
+        <form class=" d-grid gap-2 d-md-flex justify-content-md-end">
+          <input class="form-control me-2" type="search" placeholder="Saisissez une entreprise" aria-label="Search">
+          <button class="btn btn-danger" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+          <h6>Recherchez par secteur d'activité</h6>
+        <form class=" d-grid gap-2 d-md-flex justify-content-md-end">
+          <input class="form-control me-2" type="search" placeholder="Saisissez une rubrique" aria-label="Search">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container-fluid">
+          <h6>Recherche par quartier</h6>
+        <form class=" d-grid gap-2 d-md-flex justify-content-md-end">
+          <input class="form-control me-2" type="search" placeholder="Saisissez un Quartier" aria-label="Search">
+          <button class="btn btn-success" type="submit">Search</button>
+        </form>
+
+      </div>
+    </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+
+   <div class=" container">
+            <ul class="list-group shadow bg-white rounded sticky-top">
+
+
+                <h3 style="text-align: center">Links you might be interested in!</h3>
+
+                <div class="scroller" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+                    <li>
+
+                        <a href="http://www.e-santecameroun.cm" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+<!--                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                        </a>
+
+                    </li>
+
+                    <li> <a href="#" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://www.ubacameroon.com" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="http://eneocameroon.cm/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://www.mtn.cm/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://www.orange.cm" target="_blank">
+
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                  </ul>
+                </div>
+
+
+
+
+                <h3 style="text-align: center">sector 2</h3>
+
+                <div class="scroller" data-speed="slow">
+                  <ul class="tag-list scroller__inner">
+                    <li><a href="http://www.e-santecameroun.cm" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="#" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://www.ubacameroon.com" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="http://eneocameroon.cm/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li><a href="https://www.mtn.cm/" target="_blank">
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                    <li> <a href="https://www.orange.cm" target="_blank">
+
+                         <div class="col">
+                                    <div class="card h-100 nelly">
+                                      <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">
+                                      <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+        <!--                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+                                      </div>
+                                    </div>
+                                  </div>
+                    </a></li>
+
+                  </ul>
+                </div>
+
+                <style>
+                    .nelly{
+                    width: 200px;
+                    height: 200px
+                    }
+                    .nelly{
+                      display: flex;
+                      flex-direction: row;
+                    }
+
+                    @media screen and (max-width: 800px) {
+                      .row {
+                        flex-direction: row;
+                      }
+                    }
+
+
+
+                </style>
+
+
+
+
+<!--                          <div class="col">-->
+<!--                            <div class="card h-100">-->
+<!--                              <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">-->
+<!--                              <div class="card-body">-->
+<!--                                <h5 class="card-title">Card title</h5>-->
+<!--&lt;!&ndash;                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>&ndash;&gt;-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+<!--                          <div class="col">-->
+<!--                            <div class="card h-100">-->
+<!--                              <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" class="card-img-top" alt="nothing">-->
+<!--                              <div class="card-body">-->
+<!--                                <h5 class="card-title">Card title</h5>-->
+<!--&lt;!&ndash;                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>&ndash;&gt;-->
+<!--                              </div>-->
+<!--                            </div>-->
+<!--                          </div>-->
+
+<!--                      <div class="container-fluid">-->
+<!--                        <a class="navbar-brand" href="#">-->
+<!--                          <img src="{{ url_for('static', filename='images/main-logo.PNG') }}" alt="logo of full experts consulting" width="90" height="64" class="d-inline-block align-text-top img-fluid">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    <div class="container-fluid">-->
+<!--                        <a class="navbar-brand" href="http://eneocameroon.cm/">-->
+<!--                          <img src="{{ url_for('static', filename='uploads/bc8a6841-093f-11ef-bd8e-181dea30d9cc_eneo.PNG') }}" alt="logo of eneo" width="90" height="64" class="d-inline-block align-text-top img-fluid">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    <div class="container-fluid">-->
+<!--                        <a class="navbar-brand" href="https://www.mtn.cm/">-->
+<!--                          <img src="{{ url_for('static', filename='uploads/eadc367b-0b9e-11ef-9e3d-181dea30d9cc_mtn.PNG') }}" alt="logo of mtn" width="90" height="64" class="d-inline-block align-text-top img-fluid">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                    <div class="container-fluid">-->
+<!--                        <a class="navbar-brand" href="https://www.ubacameroon.com">-->
+<!--                          <img src="{{ url_for('static', filename='uploads/3faed2b4-0ba2-11ef-adff-181dea30d9cc_uba.PNG') }}" alt="logo of uba" width="90" height="64" class="d-inline-block align-text-top img-fluid">-->
+<!--                        </a>-->
+<!--                      </div>-->
+<!--                     <div class="container-fluid">-->
+<!--                        <a class="navbar-brand" href="https://www.orange.cm">-->
+<!--                          <img src="{{ url_for('static', filename='uploads/deb58242-0ba3-11ef-86a0-181dea30d9cc_orange.PNG') }}" alt="logo of orange" width="90" height="64" class="d-inline-block align-text-top img-fluid">-->
+<!--                        </a>-->
+<!--                      </div>-->
+
+<!--                       <div class="container-fluid">-->
+<!--                        <a class="navbar-brand" href="http://www.e-santecameroun.cm/">-->
+<!--                          <img src="{{ url_for('static', filename='uploads/4bbae00f-093c-11ef-8957-181dea30d9cc_esante.JPG') }}" alt="logo of e-sante" width="90" height="64" class="d-inline-block align-text-top img-fluid">-->
+<!--                        </a>-->
+                      </div>
+
+                  </ul>
+                </div>
+
+<!--                <a class="yt" href="#">-->
+<!--                  Full Experts Consulting-->
+<!--                </a>-->
+
+<!--            WITH US, YOUR BUSINESS IS SAFE. THE FULL EXPERTS TEAM-->
+            </ul>
+            <hr class="d-sm-none">
+        </div>
+
+    <script>
+        const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src=" {{ url_for('static', filename='main.js') }} "></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>comment_admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+<div class="container">
+    <p>
+        <div class="container cards">
+            <p class="container">
+                {% for c in comment_admin %}
+
+                <div class="card text-white bg-secondary mb-3 container" style="max-width: 18rem;">
+                  <div class="card-header">{{c.comment}}</div>
+                  <div class="card-body">
+                    <h7 class="card-title">name of the commenter: {{c.name}}</h7>
+                    <p class="card-text">
+                        enterprise email: {{c.enterprise_name}}<br>
+                        email of the commenter: {{c.email}}<br>
+                        commenter Tel:{{c.telephone}}<br>
+                        enterprise id:{{c.id_enterprise}}<br>
+                        commenter id:{{c.id}}<br>
+                        commented on: {{c.date}}<br>
+                    </p>
+                  </div>
+                </div>
+                {% endfor %}
+            </p>
+        </div>
+    </p>
+</div>
+
+</body>
+</html>
