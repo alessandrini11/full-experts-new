@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>users</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% include 'admin_page.html'  %}
+
+<div class="container">
+                  {%  with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for msg in messages %}
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                          <p style="color:black">{{ msg }}</p>
+                                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        </div>
+                                {% endfor %}
+                            {% endif %}
+                          {% endwith %}
+</div>
+<div class="container cards">
+
+    <p class="container">
+                    <div class="container">
+                        <a class="btn btn-success btn-sm"  href="{{url_for('admin_search_user_list')}}" role="button">
+                                                                 create
+                        </a>
+                        <form action="{{url_for('admin_search_enterprise_list')}}" method="POST" class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search a user by name" aria-label="Search" name="q1" required>
+                        <button class="btn btn-outline-success" type="submit">Search for user</button>
+                      </form>
+                    </div>
+        {% for use in user %}
+
+        <div class="card text-white bg-primary mb-3 container" style="max-width: 18rem;">
+          <div class="card-header">user full name: {{use.fullname}}</div>
+          <div class="card-body">
+            <h5 class="card-title">username: {{use.username}}</h5>
+            <p class="card-text">
+                user id: {{use.id}}<br>
+                user email: {{use.email}}<br>
+                user passord:{{use.key_id}}<br>
+                registered on: {{use.date}}<br>
+            </p>
+                  <a class="btn btn-warning btn-sm"  href="{{url_for('delete_users', id=use.id)}}" role="button">
+                                                 delete
+                  </a>
+          </div>
+        </div>
+        {% endfor %}
+    </p>
+</div>
+
+</body>
+</html>

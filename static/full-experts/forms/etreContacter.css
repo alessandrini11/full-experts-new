@@ -1,0 +1,249 @@
+.popup-container {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#multiStepForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container {
+    background-color: #2b4d6f;
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+    color: white;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-header h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-header p {
+    margin: 2px 0;
+    font-size: 4px;
+}
+
+.head-title h3 {
+    text-align: center;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+}
+.step-bar {
+    width: 60px;
+    height: 2px;
+    background-color: #ddd;
+}
+/* .step-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #1e3c72;
+} */
+
+.step-circle {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.step-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: #ddd;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: background-color 0.4s ease;
+}
+
+.step-circle.completed {
+    background-color: gold;
+    color: white;
+}
+
+.step-circle.completed::before {
+    background-color: gold;
+}
+
+.step-circle:first-child::before {
+    display: none;
+}
+
+.step-circle.actives {
+    background-color: gold;
+    color: white;
+}
+
+.step-circle.actives::before {
+    background-color: gold;
+}
+
+.phone-number {
+    font-size: 18px;
+    color: #f8b23c;
+}
+
+.form-step {
+    display: none;
+    transition: opacity 1s ease;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2px 0 49px 0;
+}
+
+.radio-group {
+    display: flex;
+    margin-bottom: -10px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+.form-step-actives {
+    display: block;
+    opacity: 1;
+}
+
+label {
+    display: block;
+    margin: 4px 0 5px;
+}
+
+.form-step input[type="text"],
+.form-step input[type="email"],
+.form-step input[type="tel"],
+.form-step input[type="radio"] {
+    margin-bottom: 15px;
+}
+
+.form-step input[type="text"],
+.form-step input[type="email"],
+.form-step input[type="tel"] {
+    background-color: transparent;
+    width: 100%;
+    padding: 2px;
+    border: none;
+    border-bottom: 2px solid gold;
+    outline: none;
+    color: #efeeee;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border-color 0.4s ease;
+}
+
+.form-step input[type="text"]:focus,
+.form-step input[type="email"]:focus,
+.form-step input[type="tel"]:focus {
+    border-bottom-color: darkgoldenrod;
+}
+
+.radio-container .radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.form-step  button {
+    background-color: #f8b23c;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+}
+
+.form-step  button:hover {
+    background-color: #e4a535;
+}
+
+.btn-next {
+    background-color: #eaeaea;
+    font-weight: bold;
+    cursor: pointer;
+    width: 60%;
+    background-color: #e4a535;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.btn-next:hover {
+    background-color: #e4a535;
+}
+
+.btn-previous {
+    background-color: #d3d3d3;
+    color: #333;
+}
+
+.btn-previous:hover {
+    background-color: #b0b0b0;
+}
+
+
+.upload-container {
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    padding: 4px;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+    margin-bottom: 1em;
+}
+
+.upload-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

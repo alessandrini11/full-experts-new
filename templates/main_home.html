@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>full experts consulting developed by Ngali Abiru</title>
+    <meta name="description" content="FULL EXPERTS CONSULTING, votre partenaire de confiance pour prendre des décisions
+          d'affaires éclairées. Grâce à notre vaste expertise en matière d'analyse de données. Douala, Bounamousadi">
+  <meta name="keywords" content="Full experts consulting, douala, cameroon">
+  <meta name="author" content="By Ngali Abiru, AI and software Engineer from polytechnic">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.PNG') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/style.css') }}">
+
+    <!--=============== style demander Expertise ===================-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/forms/demanderExpertise.css') }}">
+
+    <!--=============== style etreContacter ===================-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/forms/etreContacter.css') }}">
+
+    <!--=============== style popupservices  ===================-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/forms/popupservices.css') }}">
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/main.js') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!--===================Bootstrap =================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <div class="heads1">
+            <nav class="nav1">
+                <ul class="nav1-left">
+                    <li><i class="fa-solid fa-phone"></i><a href="#home">233474200</a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="#services">consulting@full-experts.com</a></li>
+                    <li><i class="fa-regular fa-clock"></i><a href="#about">lundi-vendredi:8h - 17h</a></li>
+                </ul>
+
+                <ul class="nav1-right">
+                    <li><a href="https://www.facebook.com/fullExpertConsulting"><i class="fa-brands fa-facebook-f"  about="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-instagram" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-whatsapp" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-linkedin-in" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-youtube" target="_blank"></i></a></li>
+<!--                    <i class="fa-brands fa-linkedin-in"></i>-->
+                </ul>
+            </nav>
+        </div>
+
+        <div class="heads2">
+            <div class="logo">
+                <div class="rond">
+                    <div  style="--i:1;" class="rond1"></div>
+                    <div  style="--i:2;" class="rond2"></div>
+                    <div  style="--i:3;" class="rond3"></div>
+                </div>
+                <p> <span id="span1" >FULL EXPERTS</span> <span id="span2">CONSULTING</span></p>
+            </div>
+
+            <div class="navigue" >
+                <li><a href="{{url_for('index')}}">Accueil</a></li>
+                <li><a href="{{url_for('full_service')}}">Services</a></li>
+                <div class="dropdown">
+                    <li  class="nav-item dropdown" class="dropbtn">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="true">
+                            A Propos
+                        </a>
+                    </li>
+                    <li class="dropdown-content" id="myDropdown" class="nav-item dropdown">
+                        <a class="dropdown-item" href="{{url_for('pour_quoi_nous')}}">Pourquoi nous choisir ?</a>
+                        <a class="dropdown-item" href="{{url_for('qui_sommes_nous')}}">Qui sommes nous ?</a>
+                    </li>
+                </div>
+                <li><a href="{{url_for('full_contact')}}">Contact</a></li>
+            </div>
+
+            <!--=============Menu Hamburger ================-->
+            <div class="hamburger" style="cursor: pointer; font-size:1em;" ><i class="fa-solid fa-bars"></i></div>
+            <div class="hamburger-menu">
+                <div class="close-hamburger" style="cursor: pointer; font-size:2em;"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                <a href="{{url_for('index')}}">Accueil</a>
+                <a href="{{url_for('full_service')}}">Services</a>
+                <a href="{{url_for('pour_quoi_nous')}}">Pourquoi nous choisir ?</a>
+                <a href="{{url_for('qui_sommes_nous')}}">Qui sommes nous ?</a>
+                <a href="{{url_for('full_contact')}}">Contact</a>
+            </div>
+
+            <div class=" place--btn" id="openPopupBtn2">
+                <button class="butt btn-1">Intregrer Notre Equipe <i class="fa-solid fa-clock-rotate-left"></i></button>
+            </div>
+
+
+            <!--=============== popup Demande d'expertise  ===================-->
+            <div id="popupConatain">
+                <div id="myPopup" class="popup">
+                    <div class="devenir__expert">
+                        <div class="form-container" >
+                            <div class="steps-container" style="z-index: 7000;">
+                                <div class="close-btn">
+                                    <span >&times;</span>
+                                </div>
+                                <div class="hev">
+                                    <h1>Formulaire de demande d'expertise</h1>
+                                    <p>Besoin de l'avis d'un Expert? Merci de remplir le formulaire ci-dessous</p>
+                                </div>
+                            </div>
+                            <form id="expertiseForm" action="{{url_for('expertise_form')}}" method="POST" enctype="multipart/form-data">
+                                <div class="step-content active" id="step1">
+                                    <input type="text" id="name" name="name" placeholder="Nom*" required>
+                                    <input type="tel" id="phone" name="phone" placeholder="Téléphone*" required>
+                                    <input type="email" id="email" name="email" placeholder="Email*" required>
+                                    <textarea name="message" id="message" required placeholder="Exprimez vos beoins*"></textarea>
+                                </div>
+                                <button type="submit">Envoyer →</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Popup for Confirmation -->
+            <div id="confirmationPopup" class="popup2" style="display:none;">
+                <div class="popup-content">
+                    <p>Merci de nous avoir sollicités. Nous prendrons attache avec vous dans les 48 prochaines heures</p>
+                    <button id="closeConfirmation">Fermer</button>
+                </div>
+            </div>
+
+            <!--============================ Formulaire Integrer notre equipe d'expert ============================-->
+            <div id="popupForm" class="popup-container">
+                <div class="form-container">
+                    <!-- Your form content goes here -->
+                    <form id="multiStepForm" action="{{url_for('integrate_equipe')}}" method="POST" enctype="multipart/form-data">
+                        <div class="head-title">
+                            <h3>Vos compétences peuvent transformer des projets</h3>
+                        </div>
+                        <div class="form-step form-step-actives">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="phone">Votre numéro de téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
+
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="name">Votre Domaine D'expertise</label>
+                            <input type="text" id="name" name="domain" required>
+
+                            <label for="uploadContainer">CV :</label>
+                            <input type="file" class="upload-container" id="uploadContainer" name="cv" accept="image/*,.pdf">
+                        </div>
+                        <button type="button" class="btn-next">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+     <main>
+        <section class="banner animate-on-scroll">
+             <div class="overlay">
+                <div class="cass">
+                    <h1 class="text-0 animate-on-scroll">Full Experts Consulting,</h1>
+                     <h1 class="text_style animate-on-scroll">l’expertise c’est nous! </h1>
+                    <p>
+                        Notre mission est de vous offrir de façon permanente un service d’expertise compétitif, <br>
+                        audacieux et adapté à vos besoins basés sur des investigations techniques de terrain.
+                    </p>
+
+                    <a href="#" id="openFormBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <strong>Demande d'expertise </strong>
+                        <span class="arrow"><i class="fa-solid fa-greater-than"></i> <i class="fa-solid fa-greater-than"></i> <i class="fa-solid fa-greater-than"></i></span>
+                    </a>
+
+
+
+
+                </div>
+
+                <div  class="services animate-on-scroll">
+
+                    <div class="service-item">
+                        <h2>Catégories<br>1</h2>
+                        <p>Vous avez réalisé votre idée de projet avec un certain succès, mais vous souhaitez développer votre activité?</p>
+                    </div>
+                    <div class="service-item">
+                             <h2>Catégories<br>2</h2>
+                        <p>Vous avez des idées et de l’argent mais vous n’arrivez pas à franchir l’étape du déclic pour vous lancer?</p>
+                    </div>
+                    <div class="service-item">
+                        <h2>Catégories<br>3</h2>
+                        <p> Vous avez réalisé votre projet d’investissement mais avec de très peu de résultats ?
+                        </p>
+                    </div>
+                    <div class="service-item">
+                        <h2>Catégories<br>4</h2>
+                        <p>Vous avez de l’argent et vous recherchez une idée d’investissement ?</p>
+                    </div>
+                    <div class="service-item">
+                        <h2>Catégories<br>5</h2>
+                        <p>Vous avez une idée d’investissement mais pas d’argent ?</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+        <section class="des-sec animate-on-scroll">
+            <div class="desc">
+
+             <h1 class="titl-des-0">Le saviez-vous ? </h1>
+             <div class="desc-1">
+                <h1 class="titl-des-1">Le<br> saviez-<br> vous ? </h1>
+
+                <div class="des-p">
+                    <p>
+                        Au Cameroun comme ailleurs de multiples projets d’investissement ne traversent pas le stade de l’idée. La non maîtrise de l’environnement alimentée principalement par un déficit de statistique, constitue l’une des causes importantes de la mortalité prématurée des projets d’entreprises.
+                  Au-delà de simples débats conceptuels, la réussite ne saurait se construire sans la maîtrise des facteurs d’échec au travers d’habiles cartographies de risques à prendre en compte pour chaque investissement.
+                        Ainsi FULL EXPERTS CONSULTING se positionne dans un accompagnement pluriel :
+
+                  <br>
+                    </p>
+                    <p>
+                        Ce positionnement place la collecte et l’analyse de données comme facteur clé de réussite : les statistiques avant, pendant et après votre projet.
+                        <br>
+                        <br> Ainsi vous nous intéressez si vous faites partie de l’une des catégories ci-dessus
+
+                  <li style="font-size:15px; ">La gestation d’idées</li>
+                        <br>
+                  <li style="font-size:15px; ">L’optimisation par l’excellence opérationnelle</li>
+                        <br>
+                  <li style="font-size:15px; ">Le développement</li>
+                    </p>
+
+                    <p>
+
+<!--   Ainsi FULL EXPERTS CONSULTING se positionne dans un accompagnement pluriel :-->
+<!--                  <li style="font-size:15px; text-align: left;">La gestation d’idées</li>-->
+<!--                        <br>-->
+<!--                  <li style="font-size:15px; text-align: left;">L’optimisation par l’excellence opérationnelle</li>-->
+<!--                        <br>-->
+<!--                  <li style="font-size:15px; text-align: left;">Le développement</li>-->
+                    </p>
+
+                    <p>
+
+                    </p>
+
+                </div>
+
+             </div>
+
+        </div>
+        </section>
+
+<!--        <section class="reff animate-on-scroll">-->
+<!--                    <h1>Références</h1>-->
+<!--                <div class="ref" >-->
+<!--                    <div class="ref-0">-->
+<!--                     <img src="{{ url_for('static', filename='full-experts/images/br.jpg') }}" class="imgref-0"  />-->
+<!--                    </div>-->
+
+<!--                    <div class="ref-0">-->
+<!--                     <img src="{{ url_for('static', filename='full-experts/images/br.jpg') }}" class="imgref-0" />-->
+<!--                    </div>-->
+
+<!--                    <div class="ref-0">-->
+<!--                     <img src="{{ url_for('static', filename='full-experts/images/br.jpg') }}" class="imgref-0" />-->
+<!--                    </div>-->
+
+<!--                    <div class="ref-0">-->
+<!--                     <img src="{{ url_for('static', filename='full-experts/images/br.jpg') }}" class="imgref-0" />-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--        </section>-->
+
+         <section class="card-sec animate-on-scroll">
+
+                 <div class="card-desp">
+                    <h2>Domaines d'expertises</h2>
+
+                       <p class="cardp"> Nos différentes <br/> domaines <br/> d'expertises</p>
+
+<!--                        <p class="p2">Ainsi vous nous intéressez si vous faite partie de l’une des catégories ci-dessous : </p>-->
+                        <button class="butt btn-2">Subscribe <i class="fa-solid fa-arrow-right"></i></button>
+                 </div>
+
+
+                 <div class="card-containrt">
+                    <div class="card">
+                        <h2>Développement web</h2>
+                        <p>
+                            <li>Création de site web</li>
+                            <li>Administration de votre site web</li>
+                            <li>Optimisation de votre site web</li>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Bâtiments et travaux publics</h2>
+                        <p class="container">
+                            <li>Etudes de marché</li>
+                            <li>Générations de plans</li>
+                            <li>Contrôles</li>
+                            <li>Gestion</li>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Comptabilité et finances</h2>
+                        <p>
+                            <li>Analyse financières</li>
+                            <li>Comptabilité</li>
+                            <li>Optimisation </li>
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Hôtels et tourismes</h2>
+                        <p>
+                            <li>Répertorier</li>
+                            <li>Classer</li>
+                            <li>proposer</li>
+                        </p>
+                    </div>
+                     <div class="card">
+                        <h2>QHSE</h2>
+                        <p>
+                            <li>Elaboration des programmes</li>
+                            <li>Accompagnement dans le respect des normes</li>
+                        </p>
+                    </div>
+                 </div>
+         </section>
+     </main>
+
+     <!--==================== droits-container ===================-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+<!--    <section class="droits-container animate-on-scroll">-->
+<!--        <div class="hea">-->
+<!--            <p>À vos côtés en cas de litige</p>-->
+<!--            <h1>Défendre vos droits</h1>-->
+<!--        </div>-->
+<!--        <div class="cards-item-container">-->
+<!--            <div class="card-item">-->
+<!--                <div class="text">-->
+<!--                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium nesciunt, nemo illum sequi, dignissimos magni ipsa architecto nam quas voluptate molestiae doloribus dolore dicta amet delectus ad iste neque facere commodi laboriosam! Eum, natus quo dicta culpa, modi officia ab sed libero exercitationem ea pariatur quidem totam officiis animi corrupti illum necessitatibus nobis doloremque ipsum! Veritatis ab dolores, at tempora esse ullam assumenda. Veritatis odio nisi voluptates minus explicabo libero voluptas ullam debitis modi, provident eveniet aperiam quia aut repudiandae atque officiis nihil molestias doloribus minima maiores, praesentium, id voluptatibus!</p>-->
+<!--                </div>-->
+
+<!--                <div class="images">-->
+<!--                    <div class="side">-->
+<!--                        <span><i class="fa-solid fa-handshake"></i></span>-->
+<!--                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, facilis?</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="card-item">-->
+<!--                <div class="text">-->
+<!--                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium nesciunt, nemo illum sequi, dignissimos magni ipsa architecto nam quas voluptate molestiae doloribus dolore dicta amet delectus ad iste neque facere commodi laboriosam! Eum, natus quo dicta culpa, modi officia ab sed libero exercitationem ea pariatur quidem totam officiis animi corrupti illum necessitatibus nobis doloremque ipsum! Veritatis ab dolores, at tempora esse ullam assumenda. Veritatis odio nisi voluptates minus explicabo libero voluptas ullam debitis modi, provident eveniet aperiam quia aut repudiandae atque officiis nihil molestias doloribus minima maiores, praesentium, id voluptatibus!</p>-->
+<!--                </div>-->
+
+<!--                <div class="images">-->
+<!--                    <div class="side">-->
+<!--                        <span><i class="fa-solid fa-people-group"></i></span>-->
+<!--                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, facilis?</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--            <div class="card-item">-->
+<!--                <div class="text">-->
+<!--                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium nesciunt, nemo illum sequi, dignissimos magni ipsa architecto nam quas voluptate molestiae doloribus dolore dicta amet delectus ad iste neque facere commodi laboriosam! Eum, natus quo dicta culpa, modi officia ab sed libero exercitationem ea pariatur quidem totam officiis animi corrupti illum necessitatibus nobis doloremque ipsum! Veritatis ab dolores, at tempora esse ullam assumenda. Veritatis odio nisi voluptates minus explicabo libero voluptas ullam debitis modi, provident eveniet aperiam quia aut repudiandae atque officiis nihil molestias doloribus minima maiores, praesentium, id voluptatibus!</p>-->
+<!--                </div>-->
+<!--                <div class="images">-->
+<!--                    <div class="side">-->
+<!--                        <span><i class="fa-solid fa-layer-group"></i></span>-->
+<!--                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, facilis?</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--==================== experts-conatiner ===================-->
+<!--    <section class="experts-conatiner animate-on-scroll">-->
+<!--        <div class="experts-des">-->
+<!--            <div class="cover">-->
+<!--                <div class="des">-->
+<!--                    <p>Étapes de résolution</p>-->
+<!--                    <h1>Nous vous aidons à chaque étape</h1>-->
+<!--                    <p>Nos experts agissent en totale transparence</p>-->
+<!--                </div>-->
+<!--                <div class="experts-services">-->
+<!--                    <div>-->
+<!--&lt;!&ndash;                        <h2>01</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h1>Expertise unilatérale de constat</h1>&ndash;&gt;-->
+<!--                        <p>Plus de 50 collaborateurs et experts opérant dans divers secteurs d’activités constituent notre réseau professionnel.</p>-->
+<!--                    </div>-->
+<!--                    <div>-->
+<!--&lt;!&ndash;                        <h2>02</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h1>Expertise unilatérale de constat</h1>&ndash;&gt;-->
+<!--                        <p>Nos équipes d’experts sont présents sur l’ensemble du territoire national ; un maillage qui permet à notre cabinet d’être plus proche de ses partenaires.</p>-->
+<!--                    </div>-->
+<!--&lt;!&ndash;                    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h2>03</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h1>Expertise unilatérale de constat</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus et repudiandae temporibus fuga praesentium eius sequi pariatur dolor tempore, reiciendis molestiae beatae iure optio reprehenderit totam esse magni officia quos!</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+
+
+    <!--==================== Formes-et-equipes ===================-->
+<!--    <section class="Formes-et-equipes animate-on-scroll">-->
+<!--        <div class="formes1">-->
+<!--            <i class="fa-brands fa-phoenix-squadron"></i>-->
+<!--            <h1>Formés et équipés </h1>-->
+<!--            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam voluptates impedit provident doloremque explicabo at rem numquam incidunt est consequatur?</p>-->
+<!--        </div>-->
+<!--        <div class="formes2">-->
+<!--            <button>Questions Frequentes<i class="fa-solid fa-arrows-spin"></i></button>-->
+<!--        </div>-->
+<!--    </section>-->
+
+
+    <!--==================== agency-container ===================-->
+<!--    <section class="agency-container animate-on-scroll">-->
+<!--        <p>Nos agences</p>-->
+<!--        <h2>Zones d'intervention</h2>-->
+<!--        <div class="agency">-->
+<!--            <div class="agent animate-on-scroll">-->
+<!--                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="footer" >-->
+<!--                <h3>Lorem ipsum dolor sit amet consectetur.</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet.</p>-->
+<!--            </div>-->
+<!--            <div class="agent animate-on-scroll">-->
+<!--                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="footer" >-->
+<!--                <h3>Lorem ipsum dolor sit amet consectetur.</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet.</p>-->
+<!--            </div>-->
+<!--            <div class="agent animate-on-scroll">-->
+<!--                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="footer">-->
+<!--                <h3>Lorem ipsum dolor sit amet consectetur.</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet.</p>-->
+<!--            </div>-->
+<!--            <div class="agent animate-on-scroll">-->
+<!--                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="footer" >-->
+<!--                <h3>Lorem ipsum dolor sit amet consectetur.</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet.</p>-->
+<!--            </div>-->
+<!--            <div class="agent animate-on-scroll">-->
+<!--                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="footer" >-->
+<!--                <h3>Lorem ipsum dolor sit amet consectetur.</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet.</p>-->
+<!--            </div>-->
+<!--            <div class="agent animate-on-scroll">-->
+<!--                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="footer">-->
+<!--                <h3>Lorem ipsum dolor sit amet consectetur.</h3>-->
+<!--                <p>Lorem ipsum dolor sit amet.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+    <!--==================== expertises-conatiner ===================-->
+    <section class="expertises-conatiner animate-on-scroll">
+        <div class="expertises">
+            <div>
+                <hr>
+                <h1>Des experts à vos côtés</h1>
+                <hr>
+                <p>
+                    Plus de 50 collaborateurs et experts opérant dans divers secteurs d’activités constituent notre réseau professionnel. Nos équipes d’experts sont présents sur l’ensemble du territoire national ; un maillage qui permet à notre cabinet d’être plus proche de ses partenaires.
+                </p>
+<!--                <a href="{{url_for('login')}}"><button>admin section</button></a>-->
+                <a href="#"><button>Subscribe</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== values-Conatiner ===================-->
+    <section class="values-container animate-on-scroll">
+        <p>Expertiser, conseiller, représenter</p>
+        <h1>Nos valeurs d'experts</h1>
+
+        <div class="values">
+            <div class="value">
+                <span><i class="fa-duotone fa-solid fa-lock"></i></span>
+                <h3>Engagement</h3>
+<!--                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, quas praesentium quod adipisci accusantium aut aliquam quo obcaecati cumque iste, nulla repellat rerum libero explicabo odio perferendis debitis voluptatibus magnam.</p>-->
+            </div>
+            <div class="value">
+                <span><i class="fa-sharp-duotone fa-solid fa-location-dot"></i></span>
+                <h3>Précision</h3>
+<!--                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi explicabo iusto vel dolorem ducimus! Omnis dolore ducimus aliquid, ad eveniet consequuntur provident dolorum ratione, pariatur unde quidem voluptate commodi possimus?</p>-->
+            </div>
+            <div class="value">
+                <span><i class="fa-solid fa-comments"></i></span>
+                <h3>Performance </h3>
+<!--                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas veniam eum labore reprehenderit quisquam ut distinctio nesciunt nostrum vel repudiandae, quibusdam exercitationem porro saepe blanditiis odio? Voluptates, suscipit cumque! Expedita.</p>-->
+            </div>
+<!--            <div class="value">-->
+<!--                <span><i class="fa-regular fa-handshake"></i></span>-->
+<!--                <h3>Engagement</h3>-->
+<!--                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam veritatis ex, animi consectetur cumque, delectus dolorem, eius in non at dolore magnam laborum illo eveniet adipisci natus illum cupiditate labore?</p>-->
+<!--            </div>-->
+        </div>
+    </section>
+
+
+
+
+    <!--==================== vertical bar ===================-->
+    <section class="vertical-bar">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </section>
+
+
+
+    <!-- =================== Contact ======================= -->
+    <section class="contact animate-on-scroll">
+        <p>Vous souhaitez être conseillé ? Nous vous recontactons sous 48h</p>
+        <h1>Contact Rapide</h1>
+        <form action="{{url_for('contact_rapid')}}" method="POST" enctype="multipart/form-data">
+            <div class="form-floating  inputBox">
+                <input type="text" class="form-control"  id="nom" placeholder="Entrer votre nom" name="nom" required
+                >
+                <label for="nom" class="form-label">Nom</label>
+            </div>
+            <div class="form-floating  inputBox">
+                <input type="email" class="form-control"  id="email" placeholder="name@example.com" name="email" required
+                >
+                <label for="email" class="form-label">Email address</label>
+            </div>
+            <div class="form-floating  inputBox">
+                <input type="text" class="form-control"  id="telephone" placeholder="Entrer votre tel" name="phone" required
+                >
+                <label for="tel" class="form-label">Telephone</label>
+            </div>
+            <div>
+                <button type="submit" >Envoyer<i class="fa-solid fa-right-to-bracket"></i></button>
+            </div>
+        </form>
+    </section>
+
+    <footer class="animate-on-scroll">
+        <div class="contain">
+            <!--================== Logo ====================-->
+            <div class="logo">
+                <div class="rond">
+                    <div  style="--i:1;" class="rond1"></div>
+                    <div  style="--i:2;" class="rond2"></div>
+                    <div  style="--i:3;" class="rond3"></div>
+                </div>
+                <p> <span id="span1" >FULL EXPERTS</span> <span id="span2">CONSULTING</span></p>
+            </div>
+
+            <!--================== Paragraphe ====================-->
+            <div class="paragraphe">
+                <p>
+                    N’hésitez pas à nous contacter
+                </p>
+            </div>
+
+            <!--================== Social-Media ====================-->
+            <div class="social-media" >
+
+<!--                <i class="fa-brands fa-instagram"></i>-->
+<!--                <i class="fa-brands fa-whatsapp"></i>-->
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/fullExpertConsulting" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+            </div>
+            <hr  id="ligne1">
+
+            <div class="row ">
+                <div class="clearfix">
+                    <div class="footer__column">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-phone"></i> <a href="#">233474200</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="#">consulting@full-experts.com</a></li>
+                        </ul>
+                        <ul>
+                            <h3>Service Technique</h3>
+                            <li> <i class="fa-solid fa-phone"></i> <a href="#">233474200</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="#">consulting@full-experts.com</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Plan du site</h3>
+                        <ul>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Pourquoi nous chsoisir ?</a></li>
+                            <li><a href="#">A propos</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Rubriques</h3>
+
+                        <ul>
+                            <li><a href="#" >Quand faire appel a un expert?</a></li>
+                            <li><a href="#" >Que faire en cas de litige?</a></li>
+                            <li><a href="#" >Quand recevrais-je mon rapport?</a></li>
+                            <li><a href="#" >Quels liens avec mon rapport?</a></li>
+                            <li><a href="#" >Quel lien avec mon avocat?</a></li>
+                            <li><a href="#" >Quand faire appel a un expert?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Informations Globales</h3>
+
+                        <ul>
+                            <li><a href="#" >Mentions legales</a></li>
+                            <li><a href="#" >Politiques de cookies</a></li>
+                            <li><a href="#" >CGV</a></li>
+                            <li><a href="#" >Devenir Partenaire</a></li>
+                            <li><a href="#" >Devenir Partenaire</a></li>
+                            <button>Rejoindre le reseau<i class="fa-solid fa-people-group"></i></button>
+                        </ul>
+
+                    </div>
+                </div>
+                <hr id="ligne2">
+                <h6>© 2023 Full Experts Consulting <br> Developed by Ngali Abiru (ngaliabiru@gmail.com)</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='full-experts/main.js') }}"></script>
+</body>
+</html>

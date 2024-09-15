@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pourquoi nous choisir ?</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- ================= Style.css =========================== -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/qui_sommes_nous.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.PNG') }}">
+
+    <!--=============== style etreContacter ===================-->
+   <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/forms/etreContacter.css') }}">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="heads1">
+            <nav class="nav1">
+                <ul class="nav1-left">
+                    <li><i class="fa-solid fa-phone"></i><a href="#home">233474200</a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="#services">consulting@full-experts.com</a></li>
+                    <li><i class="fa-regular fa-clock"></i><a href="#about">lundi-vendredi:8h - 17h</a></li>
+                </ul>
+
+                <ul class="nav1-right">
+                    <li><a href="https://www.facebook.com/fullExpertConsulting"><i class="fa-brands fa-facebook-f"  about="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-instagram" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-whatsapp" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-linkedin-in" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-youtube" target="_blank"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="heads2">
+            <div class="logo">
+                <div class="rond">
+                    <div  style="--i:1;" class="rond1"></div>
+                    <div  style="--i:2;" class="rond2"></div>
+                    <div  style="--i:3;" class="rond3"></div>
+                </div>
+                <p> <span id="span1" >FULL EXPERTS</span> <span id="span2">CONSULTING</span></p>
+            </div>
+
+            <div class="navigue" >
+                <li><a href="{{url_for('index')}}">Accueil</a></li>
+                <li><a href="{{url_for('full_service')}}">Services</a></li>
+                <div class="dropdown" style="color: #312f82;">
+                    <li >
+                        <a>
+                            A Propos <i class="fa-solid fa-caret-down"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown-content" id="myDropdown" class="nav-item dropdown">
+                       <a class="dropdown-item" href="{{url_for('pour_quoi_nous')}}">NOUS CONNAITRE</a>
+                         <a class="dropdown-item"  href="{{url_for('qui_sommes_nous')}}">Pourquoi nous faire confiance ? </a>
+                    </li>
+                </div>
+                <li><a href="{{url_for('full_contact')}}">Contact</a></li>
+            </div>
+
+            <!--=============Menu Hamburger ================-->
+            <div class="hamburger" style="cursor: pointer; font-size:1em;" ><i class="fa-solid fa-bars"></i></div>
+            <div class="hamburger-menu">
+                <div class="close-hamburger" style="cursor: pointer; font-size:2em;"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                <li><a href="{{url_for('index')}}">Accueil</a></li>
+                <li><a href="{{url_for('full_service')}}">Services</a></li>
+                <a href="{{url_for('pour_quoi_nous')}}">Pourquoi nous choisir ?</a>
+                <a href="{{url_for('qui_sommes_nous')}}">Qui sommes nous ?</a>
+                <a href="{{url_for('full_contact')}}">Contact</a>
+            </div>
+
+            <div class="place--btn"  id="openPopupBtn2">
+                <button class="butt btn-1">Intregrer Notre Equipe <i class="fa-solid fa-clock-rotate-left"></i></button>
+            </div>
+
+             <!--============================ Formulaire Intregrer Notre Equipe ============================-->
+             <div id="popupForm" class="popup-container">
+                <div class="form-container">
+                    <!-- Your form content goes here -->
+                    <form id="multiStepForm">
+                        <div class="head-title">
+                            <h3>Vos compétences peuvent transformer des projets</h3>
+                        </div>
+                        <div class="form-step form-step-actives">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="phone">Votre numéro de téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
+
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="name">Votre Domaine D'expertise</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="uploadContainer">CV :</label>
+                            <input type="file" class="upload-container" id="uploadContainer" accept="image/*,.pdf">
+                        </div>
+                        <button type="button" class="btn-next">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="banner-global animate-on-scroll">
+        <div class="text-banner-global">
+<!--            <p>Opter pour notre cabinet, </p>-->
+            <h1>Expertise et innovation sont au cœur de notre approche.</h1>
+        </div>
+   </section>
+
+    <!-- first block         ----------------------------------------- -->
+    <div class="col animate-on-scroll">
+        <div class="col-sm ">
+<!--            <p>Lorem ipsum dolor</p>-->
+            <div class="ln">
+                <h2> Cabinet <br> d'experts dans <br>plusieurs domaines</h2>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row" id="row-text">
+                <div class="col-lg" style="max-width:500px">
+                    <p style="font-size: clamp(.7em,3vw,.8em);">Offrant des solutions personnalisées en collecte de données, gestion de projets, conseils, formation, marketing et communication, nous transformons les défis en opportunités pour garantir le succès de nos clients
+                    </p>
+                </div>
+                <div class="col-lg" style="max-width:500px">
+                    <p style="font-size: clamp(.7em,3vw,.8em);">
+                        L'engagement envers des résultats de haute qualité, adaptés aux besoins spécifiques de chaque partenaire, définit notre travail.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- second block        ----------------------------------------- -->
+     <div class="block animate-on-scroll">
+         <div class="block-text">
+            <p>« Les actes font plus que les paroles, les comportements plus que l'expertise. »</p>
+         </div>
+         <!-- block 3     ------------------------------------------ -->
+<!--             <div class="row" id="block-row">-->
+<!--                <div class="col-md-4">-->
+<!--                    <img src="Canute1021.webp" alt="block-3-image">-->
+<!--                </div>-->
+<!--                <div class="col-md-8">-->
+<!--                    <span>Travail de terrain / travail d'étude</span>-->
+<!--                    <div class="ln">-->
+<!--                        <h2 style="font-size: 4rem; margin-left: 0.5em;"> Nos actions</h2>-->
+<!--                    </div>-->
+<!--                    <p>-->
+<!--                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab reprehenderit i-->
+<!--                        d corrupti soluta provident saepe numquam deserunt mollitia! Magnam provident-->
+<!--                         quo tenetur laborum nihil rem exercitationem, eius eligendi eos blanditiis?-->
+<!--                         <br>-->
+<!--                         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab reprehenderit i-->
+<!--                         d corrupti soluta provident saepe numquam deserunt mollitia! Magnam provident-->
+<!--                          quo tenetur laborum nihil rem exercitationem, eius eligendi eos blanditiis?-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--             </div>-->
+
+             <!-- grid block  -------------------------------------------- -->
+             <div class="box-row">
+                <div class="box-1">
+                    <span> 01</span>
+<!--                    <h4>Professionnels</h4>-->
+                    <p>Full Experts Consulting s'est rapidement développé, grâce à une présence majeure sur tous les segments
+                        de marchés. Notre centre d’intérêt est axé sur des problématiques communes aux entreprises liées aux études stratégiques
+                        et à l’analyse des données actuelles. Notre objectif opérationnel est de faire comprendre à chacun de  nos prospects et
+                        clients leur situation afin de définir clairement
+                        les enjeux et risques encourus qu’ils soient techniques, économiques, juridiques ou environnementales.
+                    </p>
+                </div>
+                <div class="box-1">
+                    <span> 02</span>
+<!--                    <h4>À l'écoute</h4>-->
+                    <p>Le cabinet intervient auprès des particuliers, professionnels, organismes internationaux, PME, entreprises,
+                        institutions gouvernementales... Sa compétence s’étend sur divers champs d’activités : collecte et analyse
+                        des données, montage des projets, conseil & accompagnement, formations & éducation, marketing & communication,
+                        développement web & réseaux sociaux, Bâtiments & Travaux Publics (BTP),
+                        qualité hygiène sécurité & environnement, comptabilité & finances, santé & assurance, hôtels & tourisme, ...
+                    </p>
+                </div>
+                <div class="box-1">
+                    <span> 03</span>
+<!--                    <h4>Réactifs</h4>-->
+                    <p>Full Experts Consulting est reconnu pour son approche personnalisée dans les procédures de
+                        gestion des projets à fort impacts économiques et social qui lui sont confiés par la diaspora.
+                        Notre approche est orientée client ce qui se traduit par une transparence totale et un échange régulier
+                        sur votre dossier. Nos experts mettent en application les méthodes et techniques spécialisées dans
+                        la résolution des situations, l’évaluation et la formulation des recommandations. Leur capacité d’analyse
+                        rigoureuse et objective des données crédibilise la qualité de leurs travaux grâce à des outils performants et
+                        innovants. Ils accompagnent les entreprises à faire face aux enjeux et
+                        défis qu’elles rencontrent afin d’atteindre leur maturité efficacement et durablement.
+                    </p>
+                </div>
+            </div>
+     </div>
+    <!-- third block         ----------------------------------------- -->
+<!--     <div class="service-block animate-on-scroll">-->
+<!--        <div class="service-block-text">-->
+<!--            <span>La communication est la clé</span>-->
+<!--            <h2>Service personnalisé</h2>-->
+<!--        </div>-->
+<!--        <div class="service-block-container">-->
+<!--            <div class="cont-1">-->
+<!--                <img src="Edu.png" alt="service-block-image">-->
+<!--                <div class="cont-1-text">-->
+<!--                    <h5>Pourquoi contacter Global Expertises ?</h5>-->
+<!--                    <p> Vous pouvez avoir besoin des services de notre cabinet-->
+<!--                        d’experts en bâtiment et construction pour les raisons suivantes :</p>-->
+<!--                    <ul>-->
+<!--                        <li> Lorem ipsum, dolor sit amet consect?</li>-->
+<!--                        <li> Lorem ipsum, dolor sit amet consect?</li>-->
+<!--                        <li> Lorem ipsum, dolor sit amet consect?</li>-->
+<!--                        <li> Lorem ipsum, dolor sit amet consect?</li>-->
+<!--                        <li> Lorem ipsum, dolor sit amet consect?</li>-->
+<!--                        <li> Lorem ipsum, dolor sit amet consect?</li>-->
+<!--                    </ul>-->
+<!--                    <p>-->
+<!--                        En fonction de votre demande de service ou d’assistance,-->
+<!--                         nous vous indiquerons notre fonctionnement et nos méthodes de travail.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; container two  &ndash;&gt;-->
+<!--             <div class="cont-2">-->
+<!--                    <div class="box-2">-->
+<!--                        <h4>Professionnels</h4>-->
+<!--                        <p>Nous étudions votre demande et échangeons avec vous pour pouvoir agir sereinement et efficacement.</p>-->
+<!--                    </div>-->
+<!--                    <div class="box-2">-->
+<!--                        <h4>À l'écoute</h4>-->
+<!--                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam nisi velit?-->
+<!--                            Officia ea consequuntur odio eligendi reiciendis,-->
+<!--                            illum saepe sunt, tenetur ipsam eos facere, qui fugit vitae minus id.</p>-->
+<!--                    </div>-->
+<!--                    <div class="box-2">-->
+<!--                        <h4>Réactifs</h4>-->
+<!--                        <p>Lorem ipsum dolor sit amet consectetur adipisicing el1it. Esse quam nisi velit?-->
+<!--                            Officia ea consequuntur odio eligendi reiciendis,-->
+<!--                            illum saepe sunt, tenetur ipsam eos facere, qui fugit vitae minus id.</p>-->
+<!--                    </div>-->
+<!--             </div>-->
+<!--        </div>-->
+<!--     </div>-->
+     <!-- fourth block       ----------------------------------------- -->
+<!--      <div class="contact-us-block animate-on-scroll">-->
+<!--        <div class="contact-us-block-text">-->
+<!--            <h2>Nous vous aiderons à chaque étape</h2>-->
+<!--            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.-->
+<!--                Quia quod voluptatibus vero aperiam ipsam illo similique-->
+<!--                odit nisi eaque perspiciatis porro explicabo, unde non cum. Natus ducimus odio animi molestiae.</p>-->
+<!--        </div>-->
+<!--        <div class="contact-us-btn">-->
+<!--            <button> Contact Us  >>  </button>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <!-- fifth block         ---------------------------------------- -->
+<!--       <div class="need-block">-->
+<!--        <div class="need-block-1">-->
+<!--            <p>De quoi avez-vous besoin?</p>-->
+<!--            <h2>La qualité est au cœur de notre fonctionnement</h2>-->
+<!--            <p>Notre engagement à vos côtés se traduit également par le soin que nous apportons à la qualité des documents transmis.</p>-->
+<!--            <div class="boxes">-->
+<!--                <div class="box-3">-->
+<!--                    <h4>À l'écoute</h4>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam nisi velit?-->
+<!--                        Officia ea consequuntur odio eligendi reiciendis,-->
+<!--                        illum saepe sunt, tenetur ipsam eos facere, qui fugit vitae minus id.</p>-->
+<!--                </div>-->
+<!--                <div class="box-3">-->
+<!--                    <h4>À l'écoute</h4>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam nisi velit?-->
+<!--                        Officia ea consequuntur odio eligendi reiciendis,-->
+<!--                        illum saepe sunt, tenetur ipsam eos facere, qui fugit vitae minus id.</p>-->
+<!--                </div>-->
+<!--                <div class="box-3">-->
+<!--                    <h4>À l'écoute</h4>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam nisi velit?-->
+<!--                        Officia ea consequuntur odio eligendi reiciendis,-->
+<!--                        illum saepe sunt, tenetur ipsam eos facere, qui fugit vitae minus id.</p>-->
+<!--                </div>-->
+<!--                <div class="box-3">-->
+<!--                    <h4>À l'écoute</h4>-->
+<!--                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quam nisi velit?-->
+<!--                        Officia ea consequuntur odio eligendi reiciendis,-->
+<!--                        illum saepe sunt, tenetur ipsam eos facere, qui fugit vitae minus id.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="need-block-2">-->
+<!--            <legend style="font-size: 4rem; text-align: left;">"</legend>-->
+<!--            <p style="font-size: 2.2rem;"> “Toutes les non-conformités sont causées. Tout ce qui est causé peut être prévenu.”</p>-->
+<!--            <span>Philip Crosby</span>-->
+<!--        </div>-->
+<!--       </div>-->
+       <!-- sixth blockk      ------------------------------------------- -->
+<!--    <div class="section-block">-->
+<!--        <div class="text" style="padding: 1em 0;">-->
+<!--            <h2> Notre equipe d'experts est la pour vous </h2>-->
+<!--            <p> Vous souhaitez obtenir un rdv avec l'expert qualifie la plus proche du lieu qui concerne votre besoin d'expertise ? </p>-->
+<!--        </div>-->
+<!--        <div class="btn" style="margin-top: 5em;">-->
+<!--            <button>   Contactez-nous   >> </button>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- seventh block       ------------------------------------------------>
+<!--    <div class="container faq-section">-->
+<!--        <h5>Ce que vous devriez savoir</h5>-->
+<!--        <h2 class="text-center mb-4">Questions - Réponses</h2>-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-6">-->
+<!--                <div class="accordion" id="faqAccordionLeft">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingOne">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">-->
+<!--                                    Quel est votre taux de réussite ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordionLeft">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingTwo">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">-->
+<!--                                    Pouvez-vous m'aider à gagner ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordionLeft">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingThree">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">-->
+<!--                                    À quoi puis-je m'attendre durant la procédure ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordionLeft">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingFour">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">-->
+<!--                                    Fournissez-vous des services pro bono ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordionLeft">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-6">-->
+<!--                <div class="accordion" id="faqAccordionRight">-->
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingFive">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">-->
+<!--                                    Puis-je vous contacter à tout moment ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordionRight">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingSix">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">-->
+<!--                                    "Je me sens perdu" - pouvez-vous m'aider ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordionRight">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingSeven">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">-->
+<!--                                    Cherchez-vous de nouveaux experts ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordionRight">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                    <div class="card">-->
+<!--                        <div class="card-header" id="headingEight">-->
+<!--                            <h5 class="mb-0">-->
+<!--                                <button class="btn collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">-->
+<!--                                    Quelle est la meilleure solution pour moi ?-->
+<!--                                </button>-->
+<!--                            </h5>-->
+<!--                        </div>-->
+<!--                        <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordionRight">-->
+<!--                            <div class="card-body">-->
+<!--                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <footer>
+        <div class="contain">
+            <!--================== Logo ====================-->
+            <div class="logo">
+                <div class="rond">
+                    <div  style="--i:1;" class="rond1"></div>
+                    <div  style="--i:2;" class="rond2"></div>
+                    <div  style="--i:3;" class="rond3"></div>
+                </div>
+                <p> <span id="span1" >FULL EXPERTS</span> <span id="span2">CONSULTING</span></p>
+            </div>
+
+            <!--================== Paragraphe ====================-->
+            <div class="paragraphe">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ab accusamus tenetur libero labore magni ea. Velit blanditiis dolorum incidunt labore beatae. Repellat officiis libero ex tempore incidunt sunt itaque!</p>
+            </div>
+
+            <!--================== Social-Media ====================-->
+            <div class="social-media" >
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/fullExpertConsulting" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+            <hr  id="lignes1">
+
+            <div class="rows" >
+                <div class="clearfix">
+                    <div class="footer__column">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-phone"></i> <a href="#">233474200</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="#">consulting@full-experts.com</a></li>
+                        </ul>
+                        <ul>
+                            <h3>Service Technique</h3>
+                            <li> <i class="fa-solid fa-phone"></i> <a href="#">233474200</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="#">consulting@full-experts.com</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Plan du site</h3>
+                        <ul>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Pourquoi nous chsoisir ?</a></li>
+                            <li><a href="#">A propos</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Rubriques</h3>
+
+                        <ul>
+                            <li><a href="#" >Quand faire appel a un expert?</a></li>
+                            <li><a href="#" >Que faire en cas de litige?</a></li>
+                            <li><a href="#" >Quand recevrais-je mon rapport?</a></li>
+                            <li><a href="#" >Quels liens avec mon rapport?</a></li>
+                            <li><a href="#" >Quel lien avec mon avocat?</a></li>
+                            <li><a href="#" >Quand faire appel a un expert?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Informations Globales</h3>
+
+                        <ul>
+                            <li><a href="#" >Mentions legales</a></li>
+                            <li><a href="#" >Politiques de cookies</a></li>
+                            <li><a href="#" >CGV</a></li>
+                            <li><a href="#" >Devenir Partenaire</a></li>
+                            <li><a href="#" >Devenir Partenaire</a></li>
+                            <button>Rejoindre le reseau<i class="fa-solid fa-people-group"></i></button>
+                        </ul>
+
+                    </div>
+                </div>
+                <hr id="lignes2">
+                <h6>© 2023 Full Experts Consulting <br> Developed by Ngali Abiru (ngaliabiru@gmail.com)</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='full-experts/qui_sommes_nous.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

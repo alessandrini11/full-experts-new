@@ -1,0 +1,177 @@
+
+{% include 'layout.html' %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="conainer" style="background-color:white">
+    <h1>Profile Page</h1>
+    <div>
+        <p>Your account details are below:</p>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>{{ account['fullname'] }}</td>
+            </tr>
+      <tr>
+                <td>Username:</td>
+                <td>{{ account['username'] }}</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>{{ account['email'] }}</td>
+            </tr>
+        </table>
+
+
+    </div>
+</div>
+
+                <div class="card shadow bg-white rounded" style="background-color:white">
+
+                {% for post in enterprise %}
+                <div class="shadow p-3 mb-5 bg-body rounded" style="background-color:white" id="box">
+                    <h3>Your enterprise(s)</h3>
+
+                    <div class="card mb-3 mx-auto " style="max-width: 840px;">
+                        <div class="row g-0">
+                          <div class="col-md-4">
+
+                              {% if post.logo %}
+                                 <img src="{{ url_for('static', filename='uploads/' + post.logo) }}" class="card-img-top img-fluid" alt="nothing">
+
+                              {% else %}
+                                 <img src="{{ url_for('static', filename='uploads/default.PNG') }}" class="card-img-top img-fluid" alt="photo">
+
+                              {% endif %}
+
+                          </div>
+                          <div class="col-md-8">
+                            <div class="card-body ">
+                              <h1 class="card-title">{{post.nom_enterprise}}</h1>
+                                <div class="cards" >
+                                    <p class="card-text">
+                                        <a class="btn btn-primary btn-sm" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Contact
+                                        </a>
+                                        <div class="collapse" id="collapseExample1">
+                                          <div class="card card-body">
+                                            <p>
+                                                Call the Enterprise at: {{post.enterprise_tel}}<br>
+                                                Email the Enterprise at: {{post.email_enterprise}}<br>
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </p>
+
+                                      <p class="card-text">
+                                        <a class="btn btn-info btn-sm" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Objectives
+                                        </a>
+                                        <div class="collapse" id="collapseExample2">
+                                          <div class="card card-body">
+
+                                            <p>
+                                                {{post.enterprise_desc}}
+                                            </p>
+
+                                          </div>
+                                        </div>
+                                      </p>
+
+                                        <p class="card-text">
+                                                <a class="btn btn-danger btn-sm" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Location
+
+                                            </a>
+                                            <div class="collapse" id="collapseExample3">
+                                              <div class="card card-body">
+
+                                                <p>
+                                                    {{post.location}}
+                                                </p>
+                                                <br>
+                                              </div>
+                                            </div>
+                                        </p>
+                                      <p class="card-text">
+                                         <a class="btn btn-success btn-sm"  href="{{post.google_map}}" role="button" target="_blank" >
+                                             Map
+                                        </a>
+                                      </p>
+                                      <p class="card-text">
+                                         <a class="btn btn-secondary btn-sm"  href="{{post.url}}" role="button" target="_blank">
+                                        website
+                                        </a>
+                                      </p>
+
+                                    <p class="card-text">
+                                         <a class="btn btn-secondary btn-sm"  href="{{url_for('comment')}}" role="button" >
+                                        message
+                                        </a>
+                                    </p>
+
+                                    <p class="card-text">
+                                                <a class="btn btn-danger btn-sm" data-bs-toggle="collapse" href="#collapseExample4" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                                comments
+                                            </a>
+                                            <div class="collapse" id="collapseExample4">
+                                              <div class="card card-body">
+
+                                                <p>
+                                                  <h5> <b>Comments from people</b> </h5>
+                                                  <hr>
+                                                    <div class=" scrollable">
+                                                        {% for c in commen %}
+                                                        {% if c.enterprise_name == post.email_enterprise %}
+                                                            <div class="shadow p-3 mb-5 bg-body rounded">
+                                                                <h6 style="color:red">By {{c.name}}</h6><br>
+                                                                <h8> {{c.comment}} </h8>
+                                                                <br>
+                                                                <br>
+                                                                <h10><b>Tel: {{c.telephone}}, email: {{c.email}}</b></h10>
+                                                                <br>
+                                                                <h11><b>Posted on: {{c.date}}</b></h11>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    </div>
+                                                  <hr>
+                                                </p>
+                                                <br>
+                                              </div>
+                                            </div>
+                                        </p>
+
+
+
+
+                                </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+
+
+
+</div>
+
+{% endblock %}
+
+

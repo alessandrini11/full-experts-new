@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Services</title>
+
+    <!--============================ Style CSS ================================-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/service.css') }}">
+      <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.PNG') }}">
+
+    <!--============================ Style du formulaire ================================-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/forms/popupservices.css') }}">
+
+    <!--=============== style etreContacter ===================-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='full-experts/forms/etreContacter.css') }}">
+
+    <!--============================ Bootstrap ================================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!--============================ Font Awesome ================================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  </head>
+  <body>
+
+    <header>
+        <div class="heads1">
+            <nav class="nav1">
+                <ul class="nav1-left">
+                    <li><i class="fa-solid fa-phone"></i><a href="#home">233474200</a></li>
+                    <li><i class="fa-solid fa-envelope"></i><a href="#services">consulting@full-experts.com</a></li>
+                    <li><i class="fa-regular fa-clock"></i><a href="#about">lundi-vendredi:9h - 18h</a></li>
+                </ul>
+
+                <ul class="nav1-right">
+                    <li><a href="https://www.facebook.com/fullExpertConsulting"><i class="fa-brands fa-facebook-f"  about="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-instagram" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-whatsapp" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-linkedin-in" target="_blank"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true"><i class="fa-brands fa-youtube" target="_blank"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="heads2">
+            <div class="logo">
+                <div class="rond">
+                    <div  style="--i:1;" class="rond1"></div>
+                    <div  style="--i:2;" class="rond2"></div>
+                    <div  style="--i:3;" class="rond3"></div>
+                </div>
+                <p> <span id="span1" >FULL EXPERTS</span> <span id="span2">CONSULTING</span></p>
+            </div>
+
+            <div class="navigue" >
+                <li><a href="{{url_for('index')}}">Accueil</a></li>
+                <li><a href="{{url_for('full_service')}}">Services</a></li>
+                <div class="dropdown">
+                    <li  class="nav-item dropdown" class="dropbtn">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="true">
+                            A Propos
+                        </a>
+                    </li>
+                    <li class="dropdown-content" id="myDropdown" class="nav-item dropdown">
+                       <a class="dropdown-item" href="{{url_for('pour_quoi_nous')}}">NOUS CONNAITRE</a>
+                         <a class="dropdown-item"  href="{{url_for('qui_sommes_nous')}}">Pourquoi nous faire confiance ? </a>
+                    </li>
+                </div>
+                <li><a href="{{url_for('full_contact')}}">Contact</a></li>
+            </div>
+
+            <!--=============Menu Hamburger ================-->
+            <div class="hamburger" style="cursor: pointer; font-size:1em;" ><i class="fa-solid fa-bars"></i></div>
+            <div class="hamburger-menu">
+                <div class="close-hamburger" style="cursor: pointer; font-size:2em;"><i class="fa-solid fa-rectangle-xmark"></i></div>
+                <li><a href="{{url_for('index')}}">Accueil</a></li>
+                <li><a href="{{url_for('full_service')}}">Services</a></li>
+                <a href="{{url_for('pour_quoi_nous')}}">Pourquoi nous choisir ?</a>
+                <a href="{{url_for('qui_sommes_nous')}}">Qui sommes nous ?</a>
+                <a href="{{url_for('full_contact')}}">Contact</a>
+            </div>
+
+            <div class=" place--btn" id="openPopupBtn2">
+                <button class="butt btn-1">Intregrer Notre Equipe <i class="fa-solid fa-clock-rotate-left"></i></button>
+            </div>
+
+
+            <!--============================ Formulaire Integrer Notre equipe ============================-->
+            <div id="popupForm" class="popup-container">
+                <div class="form-container">
+                    <!-- Your form content goes here -->
+                   <form id="multiStepForm" action="{{url_for('integrate_equipe')}}" method="POST" enctype="multipart/form-data">
+                        <div class="head-title">
+                            <h3>Vos compétences peuvent transformer des projets</h3>
+                        </div>
+                        <div class="form-step form-step-actives">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" required>
+
+                            <label for="phone">Votre numéro de téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
+
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="email" required>
+
+                            <label for="name">Votre Domaine D'expertise</label>
+                            <input type="text" id="name" name="domain" required>
+
+                            <label for="uploadContainer">CV :</label>
+                            <input type="file" class="upload-container" id="uploadContainer" name="cv" accept="image/*,.pdf">
+                        </div>
+                        <button type="button" class="btn-next">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="banner-global animate-on-scroll">
+        <div class="text-banner-global">
+<!--            <p>Lorem ipsum dolor sit amet consectetur.</p>-->
+            <h1>Champs d’expertise de FULL EXPERT CONSULTING</h1>
+        </div>
+   </section>
+
+    <div class="container-fluid">
+        <!--row 1-->
+        <div class="row">
+            <!--part 1-->
+            <div class="col-12">
+                <div class="d-flex flexing">
+                     <p id="borders"></p>
+                     <div>
+<!--                        <p>Expertises techniques en bâtiment et construction</p>-->
+                        <h2 id="mission">Nos missions d'expertise, vous pouvez cliquer sur n'importe quel service qui vous intéresse</h2>
+                     </div>
+                </div>
+            </div>
+
+            <!--part 2-->
+<!--            <div class="col-12 mt-5 mb-4">-->
+<!--                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem consequatur recusandae tenetur? Odio sint error impedit minima fugit nesciunt eum? At ratione harum earum possimus, itaque vitae sunt ipsa dolorem.</p>-->
+<!--            </div>-->
+
+            <!--part 3-->
+            <div class="col-10 mt-5 mb-4 display ">
+                <div class="d-flex flexing">
+                    <p id="border"></p>
+                    <div>
+                    <p>Expertises techniques en bâtiment et construction</p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <!--row 2-->
+        <div class="row rw2 " >
+            <!--part 1-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-investment">
+                <div class="r2 ">
+                    <div>
+                        <h5 style="color:#302F83;font-weight:600" >Collecte & analyse des données </h5>
+                        <p>
+                            Grâce à des méthodes rigoureuses et à des outils performants, nous transformons vos données brutes en informations exploitables. Notre expertise vous permet d'identifier des tendances, de prendre des décisions éclairées et d'optimiser vos stratégies. Nous vous accompagnons dans toutes les étapes de votre projet allant de la conception du plan de collecte jusqu'à la présentation des résultats. Nous concevons des instruments (questionnaire, entretien, interview...) utiles pour vos enquêtes, études de marché, sondage. Nous déployons sur le terrain
+                            des agents enquêteurs et évaluons après analyse et interprétation la qualité et la pertinence des données.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--part 2-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-funding">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Montage des projets</h5>
+                    <p>Le montage des projets est un service complet que nous proposons à tous entrepreneurs en particulier ceux de la diaspora qui souhaitent investir au pays. Ce service est destiné à l’incubation des projets partant de l’idéation à la réalisation du projet en passant par la maturation.
+                        Il intègre les produits tels que : l’étude de faisabilité, l’étude d’implantation, l’élaboration des business plan, des cahiers de charge, la modélisation et conception des prototypes, la coordination des équipes, suivi et évaluation. Il inclut également la recherche de financement, la négociation avec les partenaires et l’encadrement juridique nécessaire.
+                    </p>
+                </div>
+            </div>
+
+           <!--part 3-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-action">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Conseils & accompagnement </h5>
+                    <p>Cette prestation offre une expertise personnalisée à la demande. Elle s’adresse principalement aux PME,
+                        STARTUPS et PARTICULIERS. Notre intervention porte sur l’analyse et la compréhension des sujets, l’appréhension des acteurs en présence, du contexte socio-économique dans l’optique d’outiller les requérants à la maitrise de leur sujet en situation hostile et la mise en relation. Nous vous accompagnons à chaque étape de votre sollicitation. Bénéficiez de notre savoir-faire,
+                        gagner en efficacité, prenez de l’altitude, les bonnes décisions et développer votre plein potentiel
+                    </p>
+                </div>
+            </div>
+
+            <!--ROW 2 part 2-->
+            <!--part 1-->
+            <div class="col-md-4 col-12 mb-4 boxxx"  data-target="#form-performance">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Formation & éducation</h5>
+                    <p>Nos programmes ont pour objectif le renforcement des capacités, l’acquisition
+                        de nouvelles compétences et le développement du potentiel humain et la mise à niveau. Que vous soyez un
+                        particulier, un professionnel ou une entreprise, nous vous proposons une palette d’apprentissage axée sur les résultats.
+                        Bénéficiez d'une pédagogie expérimentale et de l’expertise de nos formateurs pour atteindre vos objectifs et booster votre carrière.
+                        Nos produits portent sur : formation en présentiel (atelier et séminaire),
+                        formation en ligne (webinaire), formation sur le terrain, formation technique (intelligence artificielle).
+                    </p>
+                </div>
+            </div>
+
+            <!--part 2-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600"> Marketing & communication </h5>
+                    <p>Nous vous accompagnons dès la conception des stratégies à travers la prise en considération
+                        des attentes du public consommateur. Nous mettons en œuvre des campagnes personnalisées visant à renforcer
+                        la notoriété et la visibilité de votre entreprise grâce à une analyse approfondie de marché. Cette offre inclue
+                        : l’analyse du produit, publicité et promotion, la définition de votre identité de marque, organisation d'événements
+                        et actions de relations publiques, développer des stratégies à fort impact pour doubler vos chiffres d’affaires. Notre expertise en communication digitale (réseaux sociaux)
+                        vous permet d'optimiser votre budget et d'obtenir des résultats mesurables.
+                    </p>
+                </div>
+            </div>
+
+            <!--part 3-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility1">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Développement Web & Application </h5>
+                    <p>Nous développons des solutions numériques adaptées aux consommations quotidiennes des camerounais.
+                        Nos développeurs utilisent des langages comme JAVASCRIPT en occurrence avec les FRAMEWORK, REACT, REACT NATIVE,
+                        VUEJS, ANGULAR etc pour concevoir l’interface utilisateur. Les langages côté serveur comme PHP, PYTHON, .NET, JAVASCRIPT
+                        (NODEJS) sont appliqués pour gérer les fonctionnalités et les données. Ce service vous permet de créer des sites web, de concevoir des applications personnalisées, performantes à travers la technologie DEVOPS (cloud), la mise en place des solutions e-commerce (plateforme de vente en ligne) et d'optimiser le référencement naturel. Nous mettons un point d’honneur à
+                        la protection des données propres aux individus. Nous intégrons l’intelligence artificielle et l’analyse des données.
+                    </p>
+                </div>
+            </div>
+
+            <!--ROW 2 part 3-->
+            <!--part 1-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility2">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Bâtiments & Travaux Publics </h5>
+                    <p>Nous faisons du génie civil une offre dédiée à la postérité aux générations futures.
+                        La réalisation de nos ouvrages   épouse la modernité tout en faisant ressortir l’identité et la
+                        culture africaine. Nos constructions sont conçues pour s’inscrire durablement dans le patrimoine,
+                        alliant qualité, durabilité et respect des normes architecturales et environnementales. Forts d'une expertise
+                        reconnue et d'équipes qualifiées, nous réalisons tous vos projets, de la construction neuve à la rénovation,
+                        en passant par l'aménagement d'espaces intérieurs et extérieurs. Nous nous engageons à vous offrir des prestations
+                        de qualité (études géotechniques, topographiques, hydrologiques, environnementales,
+                        sismiques...) en respectant les délais et les budgets impartis.
+                    </p>
+                </div>
+            </div>
+
+            <!--part 2-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility3">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Qualité, Hygiène, Sécurité, Environnement (QHSE)</h5>
+                    <p>L’efficacité opérationnelle, la sécurité des employés, la conformité des normes et processus, la protection
+                        de l’environnement, la prévention des risques sont des concepts qui peuvent porter atteinte à l’image, à la réputation
+                        et même au chiffre d’affaire d’une entreprise s’ils ne sont pas pris en considération. Nos experts vous accompagnent dans
+                        la mise en œuvre, le suivi et évaluation de votre système QHSE. Pour vous, nous disposons d’une gamme de produits constitués
+                        de : audits, élaboration de procédures, certification ISO, gestion des crises, de la qualité, contrôle et surveillance...
+                        En choisissant nos solutions QHSE, vous optez pour une démarche responsable et pérenne.
+                    </p>
+                </div>
+            </div>
+
+            <!--part 3-->
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility4">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Comptabilité et Finance</h5>
+                    <p>Nous prenons en charge la tenue de votre comptabilité, l'établissement de vos déclarations fiscales,
+                        la gestion de votre trésorerie, et vous accompagnons dans vos projets d'investissement. Le travail de nos
+                        experts vous assure une bonne gestion des livres comptables et financiers, garantit la précision des informations
+                        financières et le respect des obligations règlementaires avec en prime l’optimisation de la gestion des ressources.
+                        Nos experts en la matière sont porteurs des valeurs éthiques et déontologiques que sont : l’intégrité, l’objectivité,
+                        la loyauté, la diligence ce qui renforce la transparence, l’amélioration de la crédibilité des documents produits. Nous
+                        vous fournissons des analyses financières fiables qui vous permettront de prendre les
+                        meilleures décisions pour votre entreprise et maximiser votre rentabilité.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility5">
+                <div class="r2">
+                    <h5 style="color:#302F83;font-weight:600">Hôtels & Tourisme </h5>
+                    <p>De la planification de votre voyage à la réservation de services (logement et transport, restaurants...),
+                        notre équipe met à votre disposition une assistance en conseil, guide touristique, réservation d’activités locales
+                        et accompagnement multilingue. Nous vous assistons dans l’optimisation de votre budget de voyages en trouvant des options
+                        économiques selon vos besoins. Que vous soyez un particulier ou une entreprise à la recherche d'un séjour, ce secteur vous
+                        propose des expériences uniques,
+                        mémorables et enrichissantes mettant à votre disposition un ensemble de solutions adaptées à vos besoins.
+                    </p>
+                </div>
+            </div>
+<!--            <div class="col-md-4 col-12 mb-4 boxxx" data-target="#form-visibility6">-->
+<!--                <div class="r2">-->
+<!--                    <h5 style="color:#302F83;font-weight:600">Expertise Valeur Venale</h5>-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, beatae omnis ea deleniti ipsa blanditiis praesentium ut autem accusamus suscipit tempore aut commodi at! Autem placeat laudantium voluptas quisquam deserunt.</p>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+
+        <!-- =================== Formulaires services ==================== -->
+        <div id="form-investment" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('collect_data')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-investment">Nom :</label>
+                <input type="text" id="name-investment" name="name" required>
+
+                <label for="email-investment">Email :</label>
+                <input type="email" id="email-investment" name="email" required>
+
+                <label for="phone-investment">Telephone :</label>
+                <input type="text" id="phone-investment" name="phone" required>
+
+                <label for="message-investment">Message :</label>
+                <textarea id="message-investment" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-funding" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('montage_projets')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-funding">Nom :</label>
+                <input type="text" id="name-funding" name="name" required>
+
+                <label for="email-funding">Email :</label>
+                <input type="email" id="email-funding" name="email" required>
+
+                <label for="phone-funding">Telephone :</label>
+                <input type="text" id="phone-funding" name="phone" required>
+
+                <label for="message-funding">Message :</label>
+                <textarea id="message-funding" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-action" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('conseil')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-action">Nom :</label>
+                <input type="text" id="name-action" name="name" required>
+
+                <label for="email-action">Email :</label>
+                <input type="email" id="email-action" name="email" required>
+
+                <label for="phone-action">Telephone :</label>
+                <input type="text" id="phone-action" name="phone" required>
+
+                <label for="message-action">Message :</label>
+                <textarea id="message-action" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-performance" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('formation')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-performance">Nom :</label>
+                <input type="text" id="name-performance" name="name" required>
+
+                <label for="email-performance">Email :</label>
+                <input type="email" id="email-performance" name="email" required>
+
+                <label for="phone-performance">Telephone :</label>
+                <input type="text" id="phone-performance" name="phone" required>
+
+                <label for="message-performance">Message :</label>
+                <textarea id="message-performance" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-visibility" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('marketing')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-visibility">Nom :</label>
+                <input type="text" id="name-visibility" name="name" required>
+
+                <label for="email-visibility">Email :</label>
+                <input type="email" id="email-visibility" name="email" required>
+
+                <label for="phone-visibility">Telephone :</label>
+                <input type="text" id="phone-visibility" name="phone" required>
+
+                <label for="message-visibility">Message :</label>
+                <textarea id="message-visibility" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+
+        <div id="form-visibility1" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('batiment')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-visibility">Nom :</label>
+                <input type="text" id="name-visibility1" name="name" required>
+
+                <label for="email-visibility">Email :</label>
+                <input type="email" id="email-visibility1" name="email" required>
+
+                <label for="phone-visibility">Telephone :</label>
+                <input type="text" id="phone-visibility1" name="phone" required>
+
+                <label for="message-visibility">Message :</label>
+                <textarea id="message-visibility1" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-visibility2" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('qhse')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-visibility">Nom :</label>
+                <input type="text" id="name-visibility2" name="name" required>
+
+                <label for="email-visibility">Email :</label>
+                <input type="email" id="email-visibility2" name="email" required>
+
+                <label for="phone-visibility">Telephone :</label>
+                <input type="text" id="phone-visibility2" name="phone" required>
+
+                <label for="message-visibility">Message :</label>
+                <textarea id="message-visibility2" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-visibility3" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('comptabilite')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-visibility">Nom :</label>
+                <input type="text" id="name-visibility3" name="name" required>
+
+                <label for="email-visibility">Email :</label>
+                <input type="email" id="email-visibility3" name="email" required>
+
+                <label for="phone-visibility">Telephone :</label>
+                <input type="text" id="phone-visibility3" name="phone" required>
+
+                <label for="message-visibility">Message :</label>
+                <textarea id="message-visibility3" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+
+
+        <div id="form-visibility4" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('assurance')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-visibility">Nom :</label>
+                <input type="text" id="name-visibility4" name="name" required>
+
+                <label for="email-visibility">Email :</label>
+                <input type="email" id="email-visibility4" name="email" required>
+
+                <label for="phone-visibility">Telephone :</label>
+                <input type="text" id="phone-visibility4" name="phone" required>
+
+                <label for="message-visibility">Message :</label>
+                <textarea id="message-visibility4" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+        <div id="form-visibility5" class="modal-form">
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('hotel')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-visibility">Nom :</label>
+                <input type="text" id="name-visibility5" name="name" required>
+
+                <label for="email-visibility">Email :</label>
+                <input type="email" id="email-visibility5" name="email" required>
+
+                <label for="phone-visibility">Telephone :</label>
+                <input type="text" id="phone-visibility5" name="phone" required>
+
+                <label for="message-visibility">Message :</label>
+                <textarea id="message-visibility5" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+
+
+        <div id="form-visibility6" class="modal-form">
+            <div id="over">
+                wduwvuduwt
+            </div>
+            <h3>Fill this form if intereested</h3>
+            <form action="{{url_for('application')}}" method="POST" enctype="multipart/form-data">
+                <label for="name-research">Nom :</label>
+                <input type="text" id="name-research" name="name" required>
+
+                <label for="email-research">Email :</label>
+                <input type="email" id="email-research" name="email" required>
+
+                <label for="phone-research">Telephone :</label>
+                <input type="text" id="phone-research" name="phone" required>
+
+                <label for="message-research">Message :</label>
+                <textarea id="message-research" name="message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+            <button class="close-form">X</button>
+        </div>
+    </div>
+
+<!--STYLING OF ROW 2-->
+      <!--row 3: drone div-->
+      <div class="row justify-content-center">
+        <!--part 1-->
+<!--        <div class="col-md-8 col-12 mt-5 mb-4">-->
+<!--            <div class="r3">-->
+<!--           <h5 style="font-size: x-large;color:#302F83;font-weight:600">Expertise Drone</h5>-->
+<!--           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum molestias vero voluptatibus asperiores reiciendis officia temporibus, pariatur voluptates atque accusantium iusto porro distinctio veritatis omnis necessitatibus laudantium nemo id quae.</p>-->
+<!--        </div>-->
+<!--        </div>-->
+      </div>
+
+      <!--row 4-->
+      <div class="row rw4 mt-5 animate-on-scroll">
+         <!--part 1-->
+<!--         <div class="col-md-6 col-12">-->
+<!--           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum animi nemo enim est corrupti ea vero magnam qui ex quia molestias vitae quam mollitia rerum aperiam cupiditate error, minus sit.</p>-->
+<!--         </div>-->
+         <!--part 2-->
+         <div class="col-md-6 imagediv col-12">
+            <div class="image-container">
+                <img src="{{ url_for('static', filename='full-experts/images/footer.jpg') }}" alt="image" width="100%">
+             </div>
+         </div>
+      </div>
+
+      <!--row 5-->
+      <div class="row mt-5 animate-on-scroll">
+        <div class="col-md-12">
+            <div class="d-flex flexing">
+                <p id="borderse"></p>
+<!--                <div>-->
+<!--                   <h2 id="mission">D'où proviennent les pathologies du bâtiment ?</h2>-->
+<!--                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae nesciunt enim esse sit voluptatibus neque asperiores reprehenderit, omnis nulla autem tempore expedita, voluptatem ratione. Qui voluptatem maiores magni ipsam expedita!</p>-->
+<!--                </div>-->
+           </div>
+        </div>
+      </div>
+      <!--ROW 5 STYLING-->
+      <style>
+
+      </style>
+      <!--ROW 6 -->
+      <div class="row animate-on-scroll">
+         <div class="col-md-12">
+                   <!--part 1-->
+        <div class="hero">
+            <div class="overlay"></div>
+            <div class="hero-text">
+                <p style="font-size: 23px;">Parlez-nous de votre situation</p>
+                <h3 style="font-size: 63px;">Apprendre à vous connaître</h3>
+                <p style="font-size: 23px;">Toute relation avec un mandant commence par l’écoute et le conseil</p>
+            </div>
+        </div>
+         </div>
+      </div>
+
+      <!--row 7 -->
+<!--      <div class="row mt-5 animate-on-scroll">-->
+<!--          &lt;!&ndash;part 1&ndash;&gt;-->
+<!--          <div class="col-md-3 col-12 mb-4">-->
+<!--            <div class="box" id="box1">-->
+<!--              <h3 style="font-weight:800">01</h3>-->
+<!--              <p style="font-size: larger;">écouter</p>-->
+<!--              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, nemo neque nobis porro, accusamus ea, quidem rerum deserunt nostrum sed quod accusantium iste ex in dolores assumenda debitis libero dolorem?</p>-->
+<!--            </div>-->
+<!--               </div>-->
+<!--               &lt;!&ndash;part 2&ndash;&gt;-->
+<!--               <div class="col-md-3 col-12 mb-4">-->
+<!--                  <div class="box" id="box2">-->
+<!--                      <h3 style="font-weight:800">02</h3>-->
+<!--              <p style="font-size: larger;">Conseiller</p>-->
+<!--              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam doloribus voluptates placeat dolorem magnam labore sequi? A voluptatem, obcaecati quia reprehenderit alias tempore voluptatum sequi pariatur! Sit incidunt perferendis nulla.</p>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               &lt;!&ndash;part 3&ndash;&gt;-->
+<!--               <div class="col-md-3 col-12 mb-4">-->
+<!--                  <div class="box" id="box3">-->
+<!--                      <h3 style="font-weight:800">03</h3>-->
+<!--                      <p style="font-size: larger;">Intervenir</p>-->
+<!--                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, repellendus quibusdam cumque possimus accusantium beatae ipsam autem nihil soluta sequi deleniti atque minus consequatur, hic omnis, qui amet nisi reprehenderit?</p>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--               &lt;!&ndash;part 4&ndash;&gt;-->
+<!--               <div class="col-md-3 col-12 mb-4">-->
+<!--                  <div class="box" id="box4">-->
+<!--                      <h3 style="font-weight:800">04</h3>-->
+<!--                 <p style="font-size: larger;">Accompagner</p>-->
+<!--                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore soluta deserunt rerum officia architecto illo! Praesentium velit voluptatem quas possimus excepturi soluta consequatur est. Vitae, quam. Nihil id corrupti consequuntur.</p>-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--      </div>-->
+      <!--ROW 7 STYLING-->
+      <footer class="animate-on-scroll">
+        <div class="contain">
+            <!--================== Logo ====================-->
+            <div class="logo">
+                <div class="rond">
+                    <div  style="--i:1;" class="rond1"></div>
+                    <div  style="--i:2;" class="rond2"></div>
+                    <div  style="--i:3;" class="rond3"></div>
+                </div>
+                <p> <span id="span1" >FULL EXPERTS</span> <span id="span2">CONSULTING</span></p>
+            </div>
+
+            <!--================== Paragraphe ====================-->
+            <div class="paragraphe">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ab accusamus tenetur libero labore magni ea. Velit blanditiis dolorum incidunt labore beatae. Repellat officiis libero ex tempore incidunt sunt itaque!</p>
+            </div>
+
+            <!--================== Social-Media ====================-->
+            <div class="social-media" >
+               <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.facebook.com/fullExpertConsulting" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/full-experts-consulting/?viewAsMember=true" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+            <hr  id="ligne1">
+
+            <div class="row ">
+                <div class="clearfix">
+                    <div class="footer__column">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-phone"></i> <a href="#">233474200</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="#">consulting@full-experts.com</a></li>
+                        </ul>
+                        <ul>
+                            <h3>Service Technique</h3>
+                            <li> <i class="fa-solid fa-phone"></i> <a href="#">233474200</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="#">consulting@full-experts.com</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Plan du site</h3>
+                        <ul>
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Pourquoi nous chsoisir ?</a></li>
+                            <li><a href="#">A propos</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Rubriques</h3>
+
+                        <ul>
+                            <li><a href="#" >Quand faire appel a un expert?</a></li>
+                            <li><a href="#" >Que faire en cas de litige?</a></li>
+                            <li><a href="#" >Quand recevrais-je mon rapport?</a></li>
+                            <li><a href="#" >Quels liens avec mon rapport?</a></li>
+                            <li><a href="#" >Quel lien avec mon avocat?</a></li>
+                            <li><a href="#" >Quand faire appel a un expert?</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3>Informations Globales</h3>
+
+                        <ul>
+                            <li><a href="#" >Mentions legales</a></li>
+                            <li><a href="#" >Politiques de cookies</a></li>
+                            <li><a href="#" >CGV</a></li>
+                            <li><a href="#" >Devenir Partenaire</a></li>
+                            <li><a href="#" >Devenir Partenaire</a></li>
+                            <button>Rejoindre le reseau<i class="fa-solid fa-people-group"></i></button>
+                        </ul>
+
+                    </div>
+                </div>
+                <hr id="ligne2">
+                <h6>© 2024 Full Experts Consulting <br> Developed by Ngali Abiru (ngaliabiru@gmail.com)</h6>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!--END CONTAINER-FLUID MAIN DIV-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='full-experts/service.js') }}"></script>
+  </body>
+</html>
