@@ -32,12 +32,12 @@ app.secret_key = 'cairocoders-ednalan'
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/full_expert'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://tbfasawh_fullexperts:NRFyyF,FF8dqffFii%@localhost/tbfasawh_fullexperts'
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'full_expert'
+app.config['MYSQL_USER'] = 'tbfasawh_fullexperts'
+app.config['MYSQL_PASSWORD'] = 'NRFyyF,FF8dqffFii%'
+app.config['MYSQL_DB'] = 'tbfasawh_fullexperts'
 
 mysql = MySQL(app)
 # conn = mysql.connection.cursor()
@@ -1380,4 +1380,4 @@ def publicity_admin():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
